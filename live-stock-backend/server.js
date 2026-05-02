@@ -18,9 +18,14 @@ let app = express()
 
 
 app.use(cors({
-    origin: ["http://localhost:5173", "http://localhost:8081"],
-    credentials: true
-}))
+    origin: (origin, callback) => {
+        // Allow all origins to solve the CORS issue.
+        callback(null, true);
+    },
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization", "X-Requested-With", "Accept"]
+}));
 app.use(express.json())
 app.use(cookieParser())
 

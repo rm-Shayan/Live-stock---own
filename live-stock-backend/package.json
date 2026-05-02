@@ -7,7 +7,7 @@
   "type": "module",
   "main": "server.js",
   "scripts": {
-    "start": "node live-stock-backend/server.js",
+    "start": "node server.js",
     "dev": "nodemon server"
   },
   "dependencies": {
