@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Livestock Pro - Mobile Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error-container": "#ffdad6",
+                    "on-secondary": "#ffffff",
+                    "inverse-on-surface": "#eef2ef",
+                    "tertiary": "#4b574e",
+                    "tertiary-fixed-dim": "#bdcabe",
+                    "on-error-container": "#93000a",
+                    "surface-container-highest": "#dfe3e1",
+                    "on-surface-variant": "#3f4a3f",
+                    "primary-fixed": "#92f9a7",
+                    "on-tertiary-container": "#e5f2e6",
+                    "on-primary-fixed-variant": "#005224",
+                    "on-background": "#181d1b",
+                    "primary-fixed-dim": "#76dc8d",
+                    "inverse-primary": "#76dc8d",
+                    "secondary-container": "#d0e9d4",
+                    "error": "#ba1a1a",
+                    "surface-container-low": "#f1f5f2",
+                    "secondary-fixed": "#d0e9d4",
+                    "tertiary-fixed": "#d9e6da",
+                    "background": "#f6faf7",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-container": "#b9ffc2",
+                    "on-error": "#ffffff",
+                    "primary-container": "#007d3a",
+                    "on-tertiary-fixed": "#131e17",
+                    "tertiary-container": "#636f66",
+                    "surface-bright": "#f6faf7",
+                    "secondary-fixed-dim": "#b4cdb9",
+                    "outline": "#6f7a6e",
+                    "surface": "#f6faf7",
+                    "outline-variant": "#becabc",
+                    "surface-container": "#ebefec",
+                    "secondary": "#4d6453",
+                    "on-surface": "#181d1b",
+                    "surface-variant": "#dfe3e1",
+                    "surface-dim": "#d7dbd8",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-high": "#e5e9e6",
+                    "on-secondary-fixed-variant": "#364c3d",
+                    "on-secondary-container": "#536a59",
+                    "on-primary-fixed": "#00210a",
+                    "on-secondary-fixed": "#0b2013",
+                    "primary": "#00612c",
+                    "surface-tint": "#006d32",
+                    "on-tertiary-fixed-variant": "#3e4a41",
+                    "on-primary": "#ffffff",
+                    "inverse-surface": "#2d3130"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body selection:bg-primary-container/30">
+<!-- TopAppBar -->
+<header class="bg-emerald-50/80 dark:bg-zinc-950/80 backdrop-blur-xl fixed top-0 w-full z-50 shadow-[0_4px_30px_rgba(0,0,0,0.04)] h-16">
+<div class="flex items-center justify-between px-6 h-full w-full max-w-screen-xl mx-auto">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary/10 active:scale-95 transition-transform duration-200">
+<img alt="User profile photo" class="w-full h-full object-cover" data-alt="Close-up professional portrait of a farm manager in a clean linen shirt with soft natural lighting and blurred greenery" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjkv1xVKHzATrIt7zQlFxczG3MbCp2DFZ5_r6fYv5U61dqqDapZ3m9ypQv0c3mtxOrfyJdbjqrxRIyvxyW_6U-Jx53he5G2Yyr_KxO8tRvDP_9nJxH1sV0nFnHf7InaME1HyWbckcwxA-KbWMM7f5nDxSvB1yfqcBRDUW6LZLyqeTagPscY7oefUeZhqjdfwyLIhPgnJaSEMGc10wHlMGupOKkxZHZxpl5-x-xKqZdx281JFwtn2PAygwKA95ORgSZw6HarrBFnmA"/>
+</div>
+<h1 class="text-lg font-extrabold text-emerald-900 dark:text-emerald-100 font-['Manrope'] tracking-tight">Livestock Pro</h1>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-emerald-800 dark:text-emerald-400 hover:bg-emerald-100/50 dark:hover:bg-zinc-800/50 transition-colors active:scale-95">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</div>
+</header>
+<main class="pt-20 pb-28 px-4 max-w-screen-xl mx-auto space-y-8">
+<!-- Key Metrics Horizontal Scroll -->
+<section>
+<div class="flex items-end justify-between mb-4 px-2">
+<h2 class="font-headline font-bold text-xl text-on-background tracking-tight">Daily Summary</h2>
+<span class="text-label-md text-primary font-semibold">Today</span>
+</div>
+<div class="flex overflow-x-auto gap-4 no-scrollbar pb-2 px-2 -mx-2">
+<!-- Total Bakray Card -->
+<div class="flex-shrink-0 w-40 bg-surface-container-lowest rounded-xl p-4 shadow-[0_8px_32px_rgba(0,0,0,0.03)] border-b-4 border-primary">
+<span class="material-symbols-outlined text-primary mb-2" data-icon="rebase_edit">rebase_edit</span>
+<p class="text-on-surface-variant text-xs font-medium uppercase tracking-wider mb-1">Total Bakray</p>
+<p class="font-headline font-extrabold text-2xl text-on-surface">1,240</p>
+</div>
+<!-- Zabah Card -->
+<div class="flex-shrink-0 w-40 bg-surface-container-lowest rounded-xl p-4 shadow-[0_8px_32px_rgba(0,0,0,0.03)] border-b-4 border-secondary">
+<span class="material-symbols-outlined text-secondary mb-2" data-icon="content_cut">content_cut</span>
+<p class="text-on-surface-variant text-xs font-medium uppercase tracking-wider mb-1">Zabah</p>
+<p class="font-headline font-extrabold text-2xl text-on-surface">980</p>
+</div>
+<!-- Remaining Card -->
+<div class="flex-shrink-0 w-40 bg-surface-container-lowest rounded-xl p-4 shadow-[0_8px_32px_rgba(0,0,0,0.03)] border-b-4 border-tertiary">
+<span class="material-symbols-outlined text-tertiary mb-2" data-icon="inventory_2">inventory_2</span>
+<p class="text-on-surface-variant text-xs font-medium uppercase tracking-wider mb-1">Remaining</p>
+<p class="font-headline font-extrabold text-2xl text-on-surface">260</p>
+</div>
+<!-- Total Meat Card -->
+<div class="flex-shrink-0 w-48 bg-primary text-on-primary rounded-xl p-4 shadow-[0_8px_32px_rgba(0,97,44,0.15)] relative overflow-hidden">
+<div class="absolute -right-4 -top-4 opacity-10">
+<span class="material-symbols-outlined text-7xl" data-icon="restaurant">restaurant</span>
+</div>
+<span class="material-symbols-outlined mb-2" data-icon="monitor_weight">monitor_weight</span>
+<p class="text-primary-fixed-dim/80 text-xs font-medium uppercase tracking-wider mb-1">Total Meat</p>
+<div class="flex items-baseline gap-1">
+<p class="font-headline font-extrabold text-2xl">14,700</p>
+<span class="text-xs font-bold opacity-80">KG</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Quick Actions & Secondary Metrics (Asymmetric Bento) -->
+<section class="space-y-4">
+<h2 class="font-headline font-bold text-xl text-on-background tracking-tight px-2">Operational Insight</h2>
+<div class="grid grid-cols-2 gap-3">
+<div class="bg-surface-container-low p-5 rounded-xl flex flex-col justify-between h-32">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="shopping_bag">shopping_bag</span>
+<span class="text-[10px] bg-white px-2 py-0.5 rounded-full font-bold shadow-sm">KHAL</span>
+</div>
+<div>
+<p class="text-on-surface text-2xl font-headline font-bold">428</p>
+<p class="text-on-surface-variant text-xs font-medium">Collected Items</p>
+</div>
+</div>
+<div class="bg-surface-container-low p-5 rounded-xl flex flex-col justify-between h-32">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="takeout_dining">takeout_dining</span>
+<span class="text-[10px] bg-white px-2 py-0.5 rounded-full font-bold shadow-sm">PAYE</span>
+</div>
+<div>
+<p class="text-on-surface text-2xl font-headline font-bold">156</p>
+<p class="text-on-surface-variant text-xs font-medium">Sets Prepared</p>
+</div>
+</div>
+<div class="col-span-2 bg-secondary-container p-5 rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-secondary" data-icon="storefront">storefront</span>
+</div>
+<div>
+<p class="text-on-secondary-container font-headline font-bold text-lg leading-tight">12 Active Branches</p>
+<p class="text-on-secondary-container/70 text-xs font-medium">Monitoring in real-time</p>
+</div>
+</div>
+<button class="bg-on-secondary-container text-white px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest active:scale-95 transition-transform">
+                        View
+                    </button>
+</div>
+</div>
+</section>
+<!-- Active Batches List -->
+<section class="space-y-4">
+<div class="flex items-center justify-between px-2">
+<h2 class="font-headline font-bold text-xl text-on-background tracking-tight">Active Batches</h2>
+<button class="text-primary text-sm font-bold flex items-center gap-1">
+                    See All <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<div class="space-y-3">
+<!-- Batch 1 -->
+<div class="bg-surface-container-lowest p-4 rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.02)] flex items-center gap-4">
+<div class="w-12 h-12 bg-surface-container rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="inventory">inventory</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-bold text-on-surface font-headline">Batch #LV-8921</h3>
+<span class="bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full text-[10px] font-bold uppercase">Active</span>
+</div>
+<p class="text-on-surface-variant text-xs flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="schedule">schedule</span>
+                            Started 2h ago • 45 units
+                        </p>
+</div>
+</div>
+<!-- Batch 2 -->
+<div class="bg-surface-container-lowest p-4 rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.02)] flex items-center gap-4">
+<div class="w-12 h-12 bg-surface-container rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary" data-icon="inventory">inventory</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-bold text-on-surface font-headline">Batch #LV-8920</h3>
+<span class="bg-surface-variant text-on-surface-variant px-2 py-0.5 rounded-full text-[10px] font-bold uppercase">Partial</span>
+</div>
+<p class="text-on-surface-variant text-xs flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="schedule">schedule</span>
+                            Started 5h ago • 120 units
+                        </p>
+</div>
+</div>
+<!-- Batch 3 -->
+<div class="bg-surface-container-lowest p-4 rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.02)] flex items-center gap-4">
+<div class="w-12 h-12 bg-surface-container rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary" data-icon="check_circle">check_circle</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-bold text-on-surface font-headline">Batch #LV-8919</h3>
+<span class="bg-primary/10 text-primary px-2 py-0.5 rounded-full text-[10px] font-bold uppercase">Completed</span>
+</div>
+<p class="text-on-surface-variant text-xs flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="history">history</span>
+                            Yesterday • 200 units
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Visual Anchor (Purely Aesthetic) -->
+<div class="rounded-2xl overflow-hidden h-40 relative group">
+<img alt="Livestock Monitoring" class="w-full h-full object-cover" data-alt="Wide shot of healthy goats grazing in a vibrant green meadow during sunset with soft orange highlights and clean rural landscape" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIkZfNRsOcKMOaUcdnplSawhlMIfjQ6IyRfQ1J5w2tvIcRHQlRZ-2M60iXuwL1SuvOCgQ3RIUYSXyEX81cIQetEQYETXNe5NgDYTh2_TEUfUGsQtN7C8mYU3aDqsdtsAzm3oH21_cQC-mro1ll7Y_qEd8c87u7HMO8x0VMXGMe-pbVKKwLFMf10PXC6xdavHuLof2CZhPtteXi4cjg-dXLbKDA4IEN_LQXCIZhBXQnpoculAnuurc4YX_zSTUWCUxqkM_2ATdtses"/>
+<div class="absolute inset-0 bg-gradient-to-t from-emerald-950/80 to-transparent flex items-end p-6">
+<div>
+<h4 class="text-white font-headline font-bold text-lg">Herd Welfare Status</h4>
+<p class="text-white/80 text-xs">All sensors reporting optimal vitals</p>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full bg-white/90 dark:bg-zinc-900/90 backdrop-blur-xl z-50 rounded-t-[2rem] shadow-[0_-8px_32px_rgba(0,125,58,0.04)] h-24 pb-6">
+<div class="h-full flex justify-around items-center px-4 pt-3">
+<!-- Home (Active) -->
+<a class="flex flex-col items-center justify-center bg-emerald-100 dark:bg-emerald-900/40 text-emerald-900 dark:text-emerald-50 rounded-full px-5 py-2 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-['Inter'] text-[11px] font-semibold uppercase tracking-wider mt-1">Home</span>
+</a>
+<!-- Batches -->
+<a class="flex flex-col items-center justify-center text-zinc-500 dark:text-zinc-400 px-5 py-2 hover:text-emerald-700 dark:hover:text-emerald-300 transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span class="font-['Inter'] text-[11px] font-semibold uppercase tracking-wider mt-1">Batches</span>
+</a>
+<!-- Reports -->
+<a class="flex flex-col items-center justify-center text-zinc-500 dark:text-zinc-400 px-5 py-2 hover:text-emerald-700 dark:hover:text-emerald-300 transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-['Inter'] text-[11px] font-semibold uppercase tracking-wider mt-1">Reports</span>
+</a>
+<!-- Settings -->
+<a class="flex flex-col items-center justify-center text-zinc-500 dark:text-zinc-400 px-5 py-2 hover:text-emerald-700 dark:hover:text-emerald-300 transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-['Inter'] text-[11px] font-semibold uppercase tracking-wider mt-1">Settings</span>
+</a>
+</div>
+</nav>
+<!-- Contextual FAB (Only on Home/Dashboard) -->
+<button class="fixed right-6 bottom-28 w-14 h-14 bg-primary-container text-on-primary-container rounded-full shadow-2xl flex items-center justify-center active:scale-95 transition-transform z-40">
+<span class="material-symbols-outlined text-3xl" data-icon="add">add</span>
+</button>
+</body></html>

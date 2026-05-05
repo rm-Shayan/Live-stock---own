@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Staff Quick Entry - Saylani Livestock</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=DM+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "error-container": "#ffdad6",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#0b1c30",
+                        "surface-container-highest": "#d3e4fe",
+                        "tertiary-container": "#9b6200",
+                        "on-error": "#ffffff",
+                        "surface-variant": "#d3e4fe",
+                        "secondary-fixed": "#d6e3ff",
+                        "on-tertiary-container": "#fff0e3",
+                        "surface-bright": "#f8f9ff",
+                        "outline": "#707a6e",
+                        "outline-variant": "#bfc9bb",
+                        "on-error-container": "#93000a",
+                        "surface": "#f8f9ff",
+                        "background": "#f8f9ff",
+                        "on-secondary-fixed": "#001b3d",
+                        "surface-container-low": "#eff4ff",
+                        "on-primary-fixed": "#002108",
+                        "error": "#ba1a1a",
+                        "surface-dim": "#cbdbf5",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#e5eeff",
+                        "on-tertiary-fixed": "#2a1700",
+                        "inverse-primary": "#88d98f",
+                        "primary": "#0c6328",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "secondary-container": "#64a1ff",
+                        "primary-fixed": "#a3f6a9",
+                        "on-secondary-fixed-variant": "#00468c",
+                        "on-primary-fixed-variant": "#00531e",
+                        "on-primary": "#ffffff",
+                        "on-secondary-container": "#003670",
+                        "surface-tint": "#1a6c30",
+                        "tertiary": "#7a4c00",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-surface-variant": "#40493f",
+                        "tertiary-fixed": "#ffddb8",
+                        "surface-container-high": "#dce9ff",
+                        "secondary-fixed-dim": "#a9c7ff",
+                        "inverse-surface": "#213145",
+                        "secondary": "#005db7",
+                        "primary-fixed-dim": "#88d98f",
+                        "primary-container": "#2e7d3e",
+                        "on-primary-container": "#ccffcb",
+                        "on-surface": "#0b1c30"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["DM Sans"],
+                        "label": ["Inter"]
+                    }
+                },
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'DM Sans', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .tabular-nums { font-variant-numeric: tabular-nums; }
+    </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen">
+<!-- TopNavBar (Simplified for Staff) -->
+<header class="fixed top-0 w-full z-40 bg-white/80 backdrop-blur-md shadow-sm flex justify-between items-center h-16 px-6 font-['Manrope'] font-semibold">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-container text-xl" style="font-variation-settings: 'FILL' 1;">eco</span>
+</div>
+<span class="text-xl font-bold text-green-800 tracking-tight">Saylani Livestock</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex items-center gap-2 px-3 py-1.5 bg-surface-container rounded-full">
+<span class="material-symbols-outlined text-sm text-primary">person</span>
+<span class="text-sm font-medium text-on-surface">Staff: Ahmed Khan</span>
+</div>
+<button class="flex items-center gap-2 text-slate-500 hover:text-error transition-colors duration-150 active:scale-95">
+<span class="material-symbols-outlined">logout</span>
+<span class="text-sm hidden sm:inline">Logout</span>
+</button>
+</div>
+</header>
+<main class="pt-24 pb-12 px-4 md:px-8 max-w-7xl mx-auto">
+<div class="mb-8">
+<h1 class="text-3xl font-bold font-headline text-on-surface tracking-tight">Staff Quick Entry</h1>
+<p class="text-on-surface-variant mt-1">Manage daily operations efficiently.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+<!-- Card 1: Slaughter Entry -->
+<section class="bg-surface-container-lowest rounded-xl p-8 shadow-[0_12px_40px_rgba(11,28,48,0.04)] relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-1 h-full bg-error"></div>
+<div class="flex justify-between items-start mb-8">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="w-2 h-2 rounded-full bg-error animate-pulse"></span>
+<h2 class="text-xl font-bold font-headline">Zabah Entry</h2>
+</div>
+<span class="text-xs font-label uppercase tracking-widest text-on-surface-variant bg-surface-container px-2 py-1 rounded">Read-only Date: Today</span>
+</div>
+<span class="material-symbols-outlined text-error/20 text-5xl group-hover:scale-110 transition-transform duration-300" style="font-variation-settings: 'FILL' 1;">set_meal</span>
+</div>
+<div class="space-y-6">
+<div class="bg-surface-container-low rounded-xl p-6">
+<p class="text-sm text-on-surface-variant font-medium mb-1">Available Livestock</p>
+<div class="flex items-baseline gap-2">
+<span class="text-5xl font-bold tabular-nums text-primary">247</span>
+<span class="text-on-surface-variant text-sm">Heads</span>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-semibold text-on-surface ml-1">Slaughter Count</label>
+<div class="relative">
+<input class="w-full bg-surface-container-low border-none rounded-xl py-4 px-4 text-xl font-bold focus:ring-2 focus:ring-primary transition-all tabular-nums" placeholder="Enter quantity" type="number"/>
+<div class="absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant font-medium">Qty</div>
+</div>
+<p class="text-sm text-on-surface-variant mt-3 italic pl-1">
+<span class="font-bold text-primary tabular-nums">197 bachen ge</span> after this entry.
+                        </p>
+</div>
+<button class="w-full py-4 bg-gradient-to-br from-primary to-primary-container text-white rounded-xl font-bold text-lg shadow-lg shadow-primary/20 hover:shadow-xl hover:-translate-y-0.5 transition-all active:scale-95 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">send</span>
+                        Submit Entry
+                    </button>
+</div>
+</section>
+<!-- Card 2: Processing Entry -->
+<section class="bg-surface-container-lowest rounded-xl p-8 shadow-[0_12px_40px_rgba(11,28,48,0.04)] relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-1 h-full bg-secondary"></div>
+<div class="flex justify-between items-start mb-8">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<h2 class="text-xl font-bold font-headline">Processing Entry</h2>
+</div>
+<span class="text-xs font-label uppercase tracking-widest text-on-surface-variant bg-surface-container px-2 py-1 rounded">Daily Tracking</span>
+</div>
+<span class="material-symbols-outlined text-secondary/20 text-5xl group-hover:scale-110 transition-transform duration-300" style="font-variation-settings: 'FILL' 1;">conveyor_belt</span>
+</div>
+<div class="space-y-5">
+<div class="space-y-1">
+<label class="text-sm font-semibold text-on-surface ml-1">Select Slaughter Batch</label>
+<select class="w-full bg-surface-container-low border-none rounded-xl py-3 px-4 focus:ring-2 focus:ring-secondary text-on-surface font-medium">
+<option>Morning Session - 08:30 AM</option>
+<option>Afternoon Batch - 02:15 PM</option>
+<option>Special Order - ID: #9921</option>
+</select>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-1">
+<label class="text-sm font-semibold text-on-surface ml-1">Gosht (kg)</label>
+<input class="w-full bg-surface-container-low border-none rounded-xl py-3 px-4 focus:ring-2 focus:ring-secondary tabular-nums font-bold" placeholder="0.00" type="number"/>
+</div>
+<div class="space-y-1">
+<label class="text-sm font-semibold text-on-surface ml-1">Khal (Units)</label>
+<input class="w-full bg-surface-container-low border-none rounded-xl py-3 px-4 focus:ring-2 focus:ring-secondary tabular-nums font-bold" placeholder="0" type="number"/>
+</div>
+</div>
+<div class="space-y-1">
+<label class="text-sm font-semibold text-on-surface ml-1">Paye (Count)</label>
+<input class="w-full bg-surface-container-low border-none rounded-xl py-3 px-4 focus:ring-2 focus:ring-secondary tabular-nums font-bold" placeholder="0" type="number"/>
+</div>
+<button class="w-full py-4 bg-gradient-to-br from-secondary to-secondary-container text-white rounded-xl font-bold text-lg shadow-lg shadow-secondary/20 hover:shadow-xl hover:-translate-y-0.5 transition-all active:scale-95 mt-2 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">analytics</span>
+                        Submit Process
+                    </button>
+</div>
+</section>
+</div>
+<!-- Bottom: Today's Entries -->
+<section class="bg-surface-container-low rounded-2xl p-6 md:p-8">
+<div class="flex items-center justify-between mb-6">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">history</span>
+<h3 class="text-lg font-bold font-headline">Today's Entries</h3>
+</div>
+<div class="text-sm font-medium text-on-surface-variant tabular-nums">Total: 12 Entries</div>
+</div>
+<div class="overflow-x-auto rounded-xl bg-surface-container-lowest">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-high/50">
+<th class="px-6 py-4 text-xs font-label uppercase tracking-widest text-on-surface-variant">Time</th>
+<th class="px-6 py-4 text-xs font-label uppercase tracking-widest text-on-surface-variant">Type</th>
+<th class="px-6 py-4 text-xs font-label uppercase tracking-widest text-on-surface-variant">Primary Data</th>
+<th class="px-6 py-4 text-xs font-label uppercase tracking-widest text-on-surface-variant">Secondary Data</th>
+<th class="px-6 py-4 text-xs font-label uppercase tracking-widest text-on-surface-variant">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-low">
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-4 text-sm font-medium tabular-nums">09:45 AM</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded bg-error-container text-on-error-container text-[10px] font-bold uppercase">Zabah</span>
+</td>
+<td class="px-6 py-4 text-sm font-bold tabular-nums">50 Heads</td>
+<td class="px-6 py-4 text-sm text-on-surface-variant italic">ID: #98221</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-1.5 text-primary">
+<span class="material-symbols-outlined text-base">check_circle</span>
+<span class="text-xs font-bold">Verified</span>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-4 text-sm font-medium tabular-nums">11:12 AM</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded bg-secondary-container text-on-secondary-container text-[10px] font-bold uppercase">Processing</span>
+</td>
+<td class="px-6 py-4 text-sm font-bold tabular-nums">1,240.5 kg</td>
+<td class="px-6 py-4 text-sm text-on-surface-variant italic">48 Khal, 192 Paye</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-1.5 text-primary">
+<span class="material-symbols-outlined text-base">check_circle</span>
+<span class="text-xs font-bold">Verified</span>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-4 text-sm font-medium tabular-nums">01:30 PM</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded bg-error-container text-on-error-container text-[10px] font-bold uppercase">Zabah</span>
+</td>
+<td class="px-6 py-4 text-sm font-bold tabular-nums">12 Heads</td>
+<td class="px-6 py-4 text-sm text-on-surface-variant italic">Urgent Batch</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-1.5 text-tertiary">
+<span class="material-symbols-outlined text-base">pending</span>
+<span class="text-xs font-bold">Pending</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</main>
+<!-- Footer Decoration -->
+<footer class="py-8 px-6 text-center border-t border-outline-variant/10">
+<p class="text-xs font-label uppercase tracking-widest text-on-surface-variant">Verdant Archive • Saylani Livestock Tracking System</p>
+</footer>
+</body></html>

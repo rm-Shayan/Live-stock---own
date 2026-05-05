@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Manager Dashboard - Saylani Welfare</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&amp;family=Manrope:wght@200..800&amp;family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#ccffcb",
+                        "inverse-primary": "#88d98f",
+                        "surface-container-low": "#eff4ff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "surface-tint": "#1a6c30",
+                        "error": "#ba1a1a",
+                        "outline": "#707a6e",
+                        "on-secondary-fixed": "#001b3d",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "on-secondary": "#ffffff",
+                        "surface-variant": "#d3e4fe",
+                        "error-container": "#ffdad6",
+                        "on-error": "#ffffff",
+                        "surface-container-highest": "#d3e4fe",
+                        "secondary-container": "#64a1ff",
+                        "on-secondary-container": "#003670",
+                        "primary": "#0c6328",
+                        "primary-fixed": "#a3f6a9",
+                        "outline-variant": "#bfc9bb",
+                        "surface": "#f8f9ff",
+                        "on-tertiary-container": "#fff0e3",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "on-primary-fixed": "#002108",
+                        "on-tertiary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "surface-container": "#e5eeff",
+                        "background": "#f8f9ff",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed-dim": "#a9c7ff",
+                        "on-surface": "#0b1c30",
+                        "primary-container": "#2e7d3e",
+                        "tertiary-container": "#9b6200",
+                        "primary-fixed-dim": "#88d98f",
+                        "inverse-surface": "#213145",
+                        "secondary": "#005db7",
+                        "surface-container-high": "#dce9ff",
+                        "tertiary": "#7a4c00",
+                        "surface-dim": "#cbdbf5",
+                        "on-secondary-fixed-variant": "#00468c",
+                        "secondary-fixed": "#d6e3ff",
+                        "on-tertiary-fixed": "#2a1700",
+                        "on-surface-variant": "#40493f",
+                        "on-primary-fixed-variant": "#00531e",
+                        "surface-bright": "#f8f9ff",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed": "#ffddb8",
+                        "on-background": "#0b1c30"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9ff;
+            color: #0b1c30;
+        }
+        h1, h2, h3, .headline {
+            font-family: 'Manrope', sans-serif;
+        }
+        .tabular-nums {
+            font-variant-numeric: tabular-nums;
+        }
+        .glass-header {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full h-[60px] z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-100 dark:border-slate-800 shadow-sm dark:shadow-none flex justify-between items-center px-6">
+<div class="flex items-center gap-4">
+<span class="text-xl font-bold text-green-900 dark:text-green-100 flex flex-col tracking-tight font-['Manrope'] antialiased">
+                Saylani Welfare
+            </span>
+<div class="ml-4 flex items-center gap-2">
+<span class="text-on-surface font-semibold">Branch Manager</span>
+<span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-secondary-fixed text-on-secondary-fixed-variant">Gulshan Branch</span>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-slate-500 cursor-pointer hover:bg-slate-50 p-2 rounded-lg transition-colors">notifications</span>
+<span class="material-symbols-outlined text-slate-500 cursor-pointer hover:bg-slate-50 p-2 rounded-lg transition-colors">help</span>
+</div>
+<div class="flex items-center gap-3 pl-4 border-l border-slate-100">
+<img alt="User Avatar" class="w-8 h-8 rounded-full bg-slate-200" data-alt="professional portrait of a middle-aged male branch manager with a kind expression in a bright office setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwO9spmrnHGelVQ4bfDjEk9MRqIGLIWcfQMM-vHWMcTPK7Qr7uzdgFyVvnd9ug0UffdCiNpMhV7-9InPN-kkBY9rl_H0o49S76tOaH3Tr6k8yubB3OiKIjKU11G6geT60_8I_hcmb1o6gJ-jcOedj1cBvrapXQ1r6sHg6MWMyKfqm84vYranmCrgzCnAhS_udF2HOc7L6r4Zz-svXD7Mm2XGhMWUobHav-sfiNKb_rxEr5sP-Uf6vmnsl54kYyYLtTv0XLI6EK_9w"/>
+<button class="text-green-800 font-semibold cursor-pointer active:scale-95 duration-200">Logout</button>
+</div>
+</div>
+</nav>
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full w-[240px] pt-[60px] z-40 bg-white dark:bg-slate-950 border-r border-slate-100 dark:border-slate-800 flex flex-col p-4 gap-2 font-['Manrope'] text-sm font-medium tabular-nums">
+<div class="flex items-center gap-3 px-3 py-6 mb-2">
+<div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined">store</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">Admin Console</p>
+<p class="text-[10px] text-slate-500 uppercase tracking-wider">Livestock Management</p>
+</div>
+</div>
+<div class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 text-green-700 dark:text-green-400 bg-green-50/50 dark:bg-green-900/20 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-600 dark:text-slate-400 hover:text-green-600 hover:bg-slate-50 transition-all" href="#">
+<span class="material-symbols-outlined">add_circle</span>
+<span>Create Batch</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-600 dark:text-slate-400 hover:text-green-600 hover:bg-slate-50 transition-all" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span>All Batches</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-600 dark:text-slate-400 hover:text-green-600 hover:bg-slate-50 transition-all" href="#">
+<span class="material-symbols-outlined">lan</span>
+<span>Branch Allocation</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-600 dark:text-slate-400 hover:text-green-600 hover:bg-slate-50 transition-all" href="#">
+<span class="material-symbols-outlined">list_alt</span>
+<span>Allocations List</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-600 dark:text-slate-400 hover:text-green-600 hover:bg-slate-50 transition-all" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span>Reports &amp; Analytics</span>
+</a>
+</div>
+<div class="mt-auto pt-4 space-y-1 border-t border-slate-50">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-500 hover:text-green-600 transition-all" href="#">
+<span class="material-symbols-outlined">help</span>
+<span>Help Center</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-500 hover:text-green-600 transition-all" href="#">
+<span class="material-symbols-outlined">headset_mic</span>
+<span>Contact Support</span>
+</a>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="ml-[240px] pt-[60px] min-h-screen p-8">
+<!-- Header Section -->
+<header class="mb-10 flex justify-between items-end">
+<div>
+<h2 class="text-3xl font-extrabold text-on-surface tracking-tight mb-1">Gulshan Branch Overview</h2>
+<p class="text-on-surface-variant font-medium">Monitoring real-time livestock processing and inventory.</p>
+</div>
+<button class="bg-gradient-to-br from-primary to-primary-container text-white px-6 py-3 rounded-xl font-bold flex items-center gap-2 shadow-lg hover:opacity-90 active:scale-95 transition-all">
+<span class="material-symbols-outlined">add</span>
+                Add New Entry
+            </button>
+</header>
+<!-- Stat Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+<!-- Animals Received -->
+<div class="bg-surface-container-lowest p-6 rounded-xl relative overflow-hidden flex flex-col justify-between min-h-[140px]">
+<span class="material-symbols-outlined absolute -right-4 -bottom-4 text-primary/10 text-8xl" style="font-variation-settings: 'FILL' 1;">pets</span>
+<span class="text-sm font-bold text-slate-500 uppercase tracking-widest">Animals Received</span>
+<div class="mt-4">
+<span class="text-4xl font-extrabold tabular-nums text-on-surface">1,248</span>
+<p class="text-xs text-primary font-bold mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">trending_up</span> +12% from yesterday
+                    </p>
+</div>
+</div>
+<!-- Zabah -->
+<div class="bg-surface-container-lowest p-6 rounded-xl relative overflow-hidden flex flex-col justify-between min-h-[140px]">
+<span class="material-symbols-outlined absolute -right-4 -bottom-4 text-tertiary/10 text-8xl" style="font-variation-settings: 'FILL' 1;">restaurant</span>
+<span class="text-sm font-bold text-slate-500 uppercase tracking-widest">Zabah (Total)</span>
+<div class="mt-4">
+<span class="text-4xl font-extrabold tabular-nums text-on-surface">842</span>
+<p class="text-xs text-tertiary-container font-bold mt-1">67.4% Completion</p>
+</div>
+</div>
+<!-- Remaining -->
+<div class="bg-surface-container-lowest p-6 rounded-xl relative overflow-hidden flex flex-col justify-between min-h-[140px]">
+<span class="material-symbols-outlined absolute -right-4 -bottom-4 text-secondary/10 text-8xl" style="font-variation-settings: 'FILL' 1;">warehouse</span>
+<span class="text-sm font-bold text-slate-500 uppercase tracking-widest">Remaining</span>
+<div class="mt-4">
+<span class="text-4xl font-extrabold tabular-nums text-on-surface">406</span>
+<p class="text-xs text-secondary font-bold mt-1">Ready for processing</p>
+</div>
+</div>
+<!-- Aaj Ki Entries -->
+<div class="bg-surface-container-lowest p-6 rounded-xl relative overflow-hidden flex flex-col justify-between min-h-[140px]">
+<span class="material-symbols-outlined absolute -right-4 -bottom-4 text-green-600/10 text-8xl" style="font-variation-settings: 'FILL' 1;">edit_calendar</span>
+<span class="text-sm font-bold text-slate-500 uppercase tracking-widest">Aaj Ki Entries</span>
+<div class="mt-4">
+<span class="text-4xl font-extrabold tabular-nums text-on-surface">56</span>
+<p class="text-xs text-primary-container font-bold mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">update</span> Last 15 mins
+                    </p>
+</div>
+</div>
+</div>
+<!-- Pending Actions & Bento Area -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-10">
+<!-- Pending Actions -->
+<div class="lg:col-span-1 space-y-4">
+<h3 class="text-xl font-bold text-on-surface mb-4 px-2">Critical Tasks</h3>
+<div class="bg-tertiary-fixed text-on-tertiary-fixed-variant p-5 rounded-xl flex items-start gap-4 shadow-sm border border-tertiary-container/10">
+<div class="w-10 h-10 rounded-lg bg-tertiary-container/20 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-tertiary-container">pending_actions</span>
+</div>
+<div>
+<p class="font-bold text-lg leading-tight">3 Pending Confirmations</p>
+<p class="text-sm mt-1 opacity-80">Awaiting branch signature for Batch #992, #995.</p>
+<button class="mt-3 text-xs font-extrabold uppercase tracking-widest border-b-2 border-current">Review Now</button>
+</div>
+</div>
+<div class="bg-secondary-fixed text-on-secondary-fixed-variant p-5 rounded-xl flex items-start gap-4 shadow-sm border border-secondary-container/10">
+<div class="w-10 h-10 rounded-lg bg-secondary-container/20 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary-container">assignment</span>
+</div>
+<div>
+<p class="font-bold text-lg leading-tight">2 Slaughter entries</p>
+<p class="text-sm mt-1 opacity-80">Pending weight validation for the morning shift.</p>
+<button class="mt-3 text-xs font-extrabold uppercase tracking-widest border-b-2 border-current">Complete Data</button>
+</div>
+</div>
+<!-- Ad/Visual Card -->
+<div class="bg-primary rounded-xl p-6 text-on-primary-container relative overflow-hidden min-h-[200px] flex flex-col justify-end">
+<img alt="Livestock facility" class="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-overlay" data-alt="Modern clean livestock facility with green fields in the background under soft daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhjMmAPnpioDzmdVtIgkEddkxeguR0lKFCSJ4gxvlBhXMP57xDIOKAsXBErNmOIlhUFGknXnZAY6vlfqQthgwsYbEOZvrLZ8r055Nm9t3t9MZN7kPOjqhbqxaCrYoKOnfheo1SyFKrJ7QArYpMTr4j0k1V4GtBDiMzOZ5qzO21_S2VkNNtcjFlbwpq5yep14WwoVRTzOddiaJ2qlguQFZnA504x1Y6UIbbsnBM7AP8uqwdxJlIc7LPWXX66PL6vAdSCobFxHr5JjY"/>
+<div class="relative z-10">
+<h4 class="text-lg font-bold">Standard Operating Procedures</h4>
+<p class="text-sm opacity-80 mt-1">Review the updated hygiene guidelines for the Gulshan processing unit.</p>
+<button class="mt-4 px-4 py-2 bg-on-primary-container text-primary-fixed-variant rounded-lg text-xs font-bold w-fit">Download PDF</button>
+</div>
+</div>
+</div>
+<!-- Recent Slaughter Entries Table -->
+<div class="lg:col-span-2">
+<div class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm">
+<div class="p-6 border-b border-slate-50 flex justify-between items-center">
+<h3 class="text-xl font-bold text-on-surface">Recent Slaughter Entries</h3>
+<div class="flex gap-2">
+<button class="p-2 hover:bg-surface-container-low rounded-lg transition-colors">
+<span class="material-symbols-outlined text-slate-400">filter_list</span>
+</button>
+<button class="p-2 hover:bg-surface-container-low rounded-lg transition-colors">
+<span class="material-symbols-outlined text-slate-400">download</span>
+</button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-surface-container-low/50">
+<tr>
+<th class="px-6 py-4 text-xs font-extrabold text-slate-500 uppercase tracking-widest">Date</th>
+<th class="px-6 py-4 text-xs font-extrabold text-slate-500 uppercase tracking-widest">Count</th>
+<th class="px-6 py-4 text-xs font-extrabold text-slate-500 uppercase tracking-widest text-center">Processing Done</th>
+<th class="px-6 py-4 text-xs font-extrabold text-slate-500 uppercase tracking-widest">Status</th>
+<th class="px-6 py-4"></th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-50">
+<tr class="hover:bg-surface-container-low/30 transition-colors group">
+<td class="px-6 py-5 font-medium tabular-nums">Oct 24, 2023 <span class="text-xs text-slate-400 ml-2">09:15 AM</span></td>
+<td class="px-6 py-5 font-bold tabular-nums">142</td>
+<td class="px-6 py-5 text-center">
+<div class="flex justify-center">
+<div class="w-8 h-8 rounded-full bg-primary-fixed/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-lg font-bold">check</span>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="px-3 py-1 rounded-full text-xs font-bold bg-primary-fixed text-on-primary-fixed-variant">Completed</span>
+</td>
+<td class="px-6 py-5 text-right opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-slate-400 cursor-pointer">chevron_right</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/30 transition-colors group">
+<td class="px-6 py-5 font-medium tabular-nums">Oct 24, 2023 <span class="text-xs text-slate-400 ml-2">11:40 AM</span></td>
+<td class="px-6 py-5 font-bold tabular-nums">85</td>
+<td class="px-6 py-5 text-center">
+<div class="flex justify-center">
+<div class="w-8 h-8 rounded-full bg-error-container/40 flex items-center justify-center">
+<span class="material-symbols-outlined text-error text-lg font-bold">close</span>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="px-3 py-1 rounded-full text-xs font-bold bg-tertiary-fixed text-on-tertiary-fixed-variant">In Progress</span>
+</td>
+<td class="px-6 py-5 text-right opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-slate-400 cursor-pointer">chevron_right</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/30 transition-colors group">
+<td class="px-6 py-5 font-medium tabular-nums">Oct 23, 2023 <span class="text-xs text-slate-400 ml-2">08:00 AM</span></td>
+<td class="px-6 py-5 font-bold tabular-nums">210</td>
+<td class="px-6 py-5 text-center">
+<div class="flex justify-center">
+<div class="w-8 h-8 rounded-full bg-primary-fixed/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-lg font-bold">check</span>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="px-3 py-1 rounded-full text-xs font-bold bg-primary-fixed text-on-primary-fixed-variant">Completed</span>
+</td>
+<td class="px-6 py-5 text-right opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-slate-400 cursor-pointer">chevron_right</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/30 transition-colors group">
+<td class="px-6 py-5 font-medium tabular-nums">Oct 23, 2023 <span class="text-xs text-slate-400 ml-2">02:30 PM</span></td>
+<td class="px-6 py-5 font-bold tabular-nums">155</td>
+<td class="px-6 py-5 text-center">
+<div class="flex justify-center">
+<div class="w-8 h-8 rounded-full bg-primary-fixed/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-lg font-bold">check</span>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="px-3 py-1 rounded-full text-xs font-bold bg-primary-fixed text-on-primary-fixed-variant">Completed</span>
+</td>
+<td class="px-6 py-5 text-right opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-slate-400 cursor-pointer">chevron_right</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/30 transition-colors group">
+<td class="px-6 py-5 font-medium tabular-nums">Oct 22, 2023 <span class="text-xs text-slate-400 ml-2">10:00 AM</span></td>
+<td class="px-6 py-5 font-bold tabular-nums">190</td>
+<td class="px-6 py-5 text-center">
+<div class="flex justify-center">
+<div class="w-8 h-8 rounded-full bg-primary-fixed/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-lg font-bold">check</span>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="px-3 py-1 rounded-full text-xs font-bold bg-primary-fixed text-on-primary-fixed-variant">Completed</span>
+</td>
+<td class="px-6 py-5 text-right opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-slate-400 cursor-pointer">chevron_right</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-6 bg-surface-container-low/20 border-t border-slate-50 flex justify-between items-center">
+<p class="text-sm text-slate-500">Showing 5 of 42 entries</p>
+<div class="flex gap-2">
+<button class="px-4 py-2 rounded-lg bg-white border border-slate-200 text-xs font-bold hover:bg-slate-50">Previous</button>
+<button class="px-4 py-2 rounded-lg bg-white border border-slate-200 text-xs font-bold hover:bg-slate-50">Next</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

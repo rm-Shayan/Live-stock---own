@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-container": "#ccffcb",
+                    "inverse-primary": "#88d98f",
+                    "surface-container-low": "#eff4ff",
+                    "inverse-on-surface": "#eaf1ff",
+                    "surface-tint": "#1a6c30",
+                    "error": "#ba1a1a",
+                    "outline": "#707a6e",
+                    "on-secondary-fixed": "#001b3d",
+                    "tertiary-fixed-dim": "#ffb95f",
+                    "on-secondary": "#ffffff",
+                    "surface-variant": "#d3e4fe",
+                    "error-container": "#ffdad6",
+                    "on-error": "#ffffff",
+                    "surface-container-highest": "#d3e4fe",
+                    "secondary-container": "#64a1ff",
+                    "on-secondary-container": "#003670",
+                    "primary": "#0c6328",
+                    "primary-fixed": "#a3f6a9",
+                    "outline-variant": "#bfc9bb",
+                    "surface": "#f8f9ff",
+                    "on-tertiary-container": "#fff0e3",
+                    "on-tertiary-fixed-variant": "#653e00",
+                    "on-primary-fixed": "#002108",
+                    "on-tertiary": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "surface-container": "#e5eeff",
+                    "background": "#f8f9ff",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-fixed-dim": "#a9c7ff",
+                    "on-surface": "#0b1c30",
+                    "primary-container": "#2e7d3e",
+                    "tertiary-container": "#9b6200",
+                    "primary-fixed-dim": "#88d98f",
+                    "inverse-surface": "#213145",
+                    "secondary": "#005db7",
+                    "surface-container-high": "#dce9ff",
+                    "tertiary": "#7a4c00",
+                    "surface-dim": "#cbdbf5",
+                    "on-secondary-fixed-variant": "#00468c",
+                    "secondary-fixed": "#d6e3ff",
+                    "on-tertiary-fixed": "#2a1700",
+                    "on-surface-variant": "#40493f",
+                    "on-primary-fixed-variant": "#00531e",
+                    "surface-bright": "#f8f9ff",
+                    "on-error-container": "#93000a",
+                    "tertiary-fixed": "#ffddb8",
+                    "on-background": "#0b1c30"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+        .tabular-nums { font-variant-numeric: tabular-nums; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full h-[60px] z-50 bg-white/80 backdrop-blur-md border-b border-slate-100 flex justify-between items-center px-6 shadow-sm font-['Manrope'] antialiased">
+<div class="flex items-center gap-4">
+<div class="flex flex-col tracking-tight text-xl font-bold text-green-900">
+<span>Saylani Welfare</span>
+</div>
+</div>
+<div class="flex-1 max-w-md ml-12">
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-slate-400">search</span>
+<input class="w-full bg-surface-container-low border-none rounded-xl py-2 pl-10 pr-4 focus:ring-2 focus:ring-primary/20 text-sm" placeholder="Search branches..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-4 text-slate-500">
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">notifications</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">help</span>
+</div>
+<div class="flex items-center gap-3 pl-6 border-l border-slate-100">
+<div class="text-right hidden sm:block">
+<p class="text-xs font-bold text-on-surface">Admin User</p>
+<p class="text-[10px] text-slate-500">Super Administrator</p>
+</div>
+<button class="text-green-800 font-semibold text-sm cursor-pointer active:scale-95 duration-200">Logout</button>
+</div>
+</div>
+</nav>
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full w-[240px] pt-[60px] z-40 bg-white border-r border-slate-100 flex flex-col p-4 gap-2 font-['Manrope'] text-sm font-medium tabular-nums shadow-none">
+<div class="mb-6 px-2 pt-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined">agriculture</span>
+</div>
+<div>
+<p class="font-bold text-on-surface leading-tight">Admin Console</p>
+<p class="text-[10px] text-slate-500">Livestock Management</p>
+</div>
+</div>
+</div>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:text-green-600 hover:bg-slate-50 transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:text-green-600 hover:bg-slate-50 transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+<span>Create Batch</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:text-green-600 hover:bg-slate-50 transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined text-[20px]">inventory_2</span>
+<span>All Batches</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-green-700 bg-green-50/50 rounded-lg font-semibold" href="#">
+<span class="material-symbols-outlined text-[20px]">lan</span>
+<span>Branch Allocation</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:text-green-600 hover:bg-slate-50 transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined text-[20px]">list_alt</span>
+<span>Allocations List</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:text-green-600 hover:bg-slate-50 transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined text-[20px]">analytics</span>
+<span>Reports &amp; Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:text-green-600 hover:bg-slate-50 transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined text-[20px]">group</span>
+<span>User Management</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:text-green-600 hover:bg-slate-50 transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+<span>Settings</span>
+</a>
+</nav>
+<div class="mt-auto border-t border-slate-50 pt-4 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-500 hover:bg-slate-50 transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined text-[20px]">help</span>
+<span>Help Center</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-500 hover:bg-slate-50 transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined text-[20px]">headset_mic</span>
+<span>Contact Support</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-[240px] pt-[60px] min-h-screen p-8 bg-surface">
+<div class="max-w-6xl mx-auto">
+<!-- Header Section -->
+<header class="flex justify-between items-end mb-8">
+<div>
+<h1 class="text-3xl font-extrabold text-on-surface tracking-tight mb-2">Branch Allocation</h1>
+<p class="text-on-surface-variant max-w-md">Distribute batch livestock across regional branches efficiently.</p>
+</div>
+<div class="flex items-center gap-3">
+<div class="bg-surface-container-highest px-4 py-2 rounded-xl flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">calendar_today</span>
+<span class="text-sm font-semibold tabular-nums text-on-surface">Oct 24, 2023</span>
+</div>
+</div>
+</header>
+<div class="grid grid-cols-12 gap-8 items-start">
+<!-- Left: Batch Selection & Info -->
+<div class="col-span-12 lg:col-span-4 space-y-6">
+<section class="bg-surface-container-lowest p-6 rounded-xl shadow-sm">
+<label class="block text-xs font-bold text-on-surface uppercase tracking-wider mb-3">Select Active Batch</label>
+<div class="relative">
+<select class="w-full bg-surface-container-low border-none rounded-xl py-3 pl-4 pr-10 focus:ring-2 focus:ring-primary appearance-none font-medium">
+<option>BATCH-2024-001</option>
+<option>BATCH-2024-002</option>
+<option>BATCH-2023-098</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400">expand_more</span>
+</div>
+</section>
+<section class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<div class="p-6 bg-primary text-white">
+<h3 class="text-lg font-bold mb-1">BATCH-2024-001</h3>
+<p class="text-xs text-on-primary-container opacity-80 uppercase tracking-widest font-semibold">Current Batch Status</p>
+</div>
+<div class="p-6 space-y-4">
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant text-sm">Total Capacity</span>
+<span class="font-bold tabular-nums">500 Animals</span>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[60%]" style="width: 60%"></div>
+</div>
+<div class="grid grid-cols-2 gap-4 pt-2">
+<div class="bg-surface-container-low p-3 rounded-lg text-center">
+<p class="text-[10px] uppercase font-bold text-slate-500 mb-1">Allocated</p>
+<p class="text-xl font-extrabold text-primary tabular-nums">300</p>
+</div>
+<div class="bg-surface-container-low p-3 rounded-lg text-center">
+<p class="text-[10px] uppercase font-bold text-slate-500 mb-1">Remaining</p>
+<p class="text-xl font-extrabold text-secondary tabular-nums">200</p>
+</div>
+</div>
+</div>
+</section>
+<div class="p-6 bg-gradient-to-br from-primary to-primary-container rounded-xl text-white">
+<div class="flex items-start justify-between mb-4">
+<div>
+<p class="text-xs font-bold uppercase opacity-80 tracking-widest">Global Progress</p>
+<p class="text-3xl font-black tabular-nums">60%</p>
+</div>
+<span class="material-symbols-outlined text-4xl opacity-30">donut_large</span>
+</div>
+<p class="text-sm opacity-90 leading-relaxed font-medium">Total Allocated 300/500. Ensure all animals are assigned before final approval.</p>
+</div>
+</div>
+<!-- Right: Allocation Table -->
+<div class="col-span-12 lg:col-span-8">
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<div class="p-6 border-b border-surface-container-low flex justify-between items-center">
+<h3 class="text-lg font-bold text-on-surface">Regional Distribution List</h3>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="text-[10px] font-bold text-primary uppercase">Live Allocation Mode</span>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-surface-container-low/50">
+<tr>
+<th class="px-6 py-4 text-xs font-bold text-on-surface-variant uppercase tracking-wider">Branch Name</th>
+<th class="px-6 py-4 text-xs font-bold text-on-surface-variant uppercase tracking-wider">Current Allocated</th>
+<th class="px-6 py-4 text-xs font-bold text-on-surface-variant uppercase tracking-wider">Add Animals</th>
+<th class="px-6 py-4 text-xs font-bold text-on-surface-variant uppercase tracking-wider">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-low">
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-secondary-fixed flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-sm">location_on</span>
+</div>
+<span class="font-bold text-on-surface">Karachi South</span>
+</div>
+</td>
+<td class="px-6 py-5 tabular-nums text-on-surface-variant font-medium">120 Animals</td>
+<td class="px-6 py-5">
+<input class="w-24 bg-surface-container-low border-none rounded-lg py-2 px-3 focus:ring-2 focus:ring-primary text-sm tabular-nums" placeholder="0" type="number"/>
+</td>
+<td class="px-6 py-5">
+<button class="text-xs font-bold text-primary hover:bg-primary-fixed px-4 py-2 rounded-lg transition-colors">Allocate</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-secondary-fixed flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-sm">location_on</span>
+</div>
+<span class="font-bold text-on-surface">Lahore Central</span>
+</div>
+</td>
+<td class="px-6 py-5 tabular-nums text-on-surface-variant font-medium">80 Animals</td>
+<td class="px-6 py-5">
+<input class="w-24 bg-surface-container-low border-none rounded-lg py-2 px-3 focus:ring-2 focus:ring-primary text-sm tabular-nums" placeholder="0" type="number"/>
+</td>
+<td class="px-6 py-5">
+<button class="text-xs font-bold text-primary hover:bg-primary-fixed px-4 py-2 rounded-lg transition-colors">Allocate</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-secondary-fixed flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-sm">location_on</span>
+</div>
+<span class="font-bold text-on-surface">Islamabad Hub</span>
+</div>
+</td>
+<td class="px-6 py-5 tabular-nums text-on-surface-variant font-medium">100 Animals</td>
+<td class="px-6 py-5">
+<input class="w-24 bg-surface-container-low border-none rounded-lg py-2 px-3 focus:ring-2 focus:ring-primary text-sm tabular-nums" placeholder="0" type="number"/>
+</td>
+<td class="px-6 py-5">
+<button class="text-xs font-bold text-primary hover:bg-primary-fixed px-4 py-2 rounded-lg transition-colors">Allocate</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-secondary-fixed flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-sm">location_on</span>
+</div>
+<span class="font-bold text-on-surface">Peshawar West</span>
+</div>
+</td>
+<td class="px-6 py-5 tabular-nums text-on-surface-variant font-medium">0 Animals</td>
+<td class="px-6 py-5">
+<input class="w-24 bg-surface-container-low border-none rounded-lg py-2 px-3 focus:ring-2 focus:ring-primary text-sm tabular-nums" placeholder="0" type="number"/>
+</td>
+<td class="px-6 py-5">
+<button class="text-xs font-bold text-primary hover:bg-primary-fixed px-4 py-2 rounded-lg transition-colors">Allocate</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-6 border-t border-surface-container-low flex items-center justify-between bg-surface-container-lowest">
+<p class="text-sm text-on-surface-variant italic font-medium">Changes are saved temporarily until global submission.</p>
+<div class="flex gap-4">
+<button class="px-6 py-2 rounded-xl text-primary font-bold hover:bg-surface-container-low transition-colors">Cancel Session</button>
+<button class="bg-gradient-to-br from-primary to-primary-container text-white px-8 py-3 rounded-xl font-bold shadow-lg shadow-primary/20 active:scale-95 transition-transform">Save All Allocations</button>
+</div>
+</div>
+</div>
+<!-- Additional Context Card -->
+<div class="mt-8 grid grid-cols-2 gap-6">
+<div class="bg-surface-container-low p-6 rounded-xl flex items-center gap-4">
+<div class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-primary">local_shipping</span>
+</div>
+<div>
+<p class="text-xs font-bold text-slate-500 uppercase">Next Logistics Window</p>
+<p class="text-lg font-bold text-on-surface">Tomorrow, 08:00 AM</p>
+</div>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl flex items-center gap-4">
+<div class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-secondary">verified_user</span>
+</div>
+<div>
+<p class="text-xs font-bold text-slate-500 uppercase">Inventory Check</p>
+<p class="text-lg font-bold text-on-surface">Verified 4 hrs ago</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

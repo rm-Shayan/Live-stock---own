@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Branch Inventory | Saylani Livestock</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "error-container": "#ffdad6",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#0b1c30",
+                        "surface-container-highest": "#d3e4fe",
+                        "tertiary-container": "#9b6200",
+                        "on-error": "#ffffff",
+                        "surface-variant": "#d3e4fe",
+                        "secondary-fixed": "#d6e3ff",
+                        "on-tertiary-container": "#fff0e3",
+                        "surface-bright": "#f8f9ff",
+                        "outline": "#707a6e",
+                        "outline-variant": "#bfc9bb",
+                        "on-error-container": "#93000a",
+                        "surface": "#f8f9ff",
+                        "background": "#f8f9ff",
+                        "on-secondary-fixed": "#001b3d",
+                        "surface-container-low": "#eff4ff",
+                        "on-primary-fixed": "#002108",
+                        "error": "#ba1a1a",
+                        "surface-dim": "#cbdbf5",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#e5eeff",
+                        "on-tertiary-fixed": "#2a1700",
+                        "inverse-primary": "#88d98f",
+                        "primary": "#0c6328",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "secondary-container": "#64a1ff",
+                        "primary-fixed": "#a3f6a9",
+                        "on-secondary-fixed-variant": "#00468c",
+                        "on-primary-fixed-variant": "#00531e",
+                        "on-primary": "#ffffff",
+                        "on-secondary-container": "#003670",
+                        "surface-tint": "#1a6c30",
+                        "tertiary": "#7a4c00",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-surface-variant": "#40493f",
+                        "tertiary-fixed": "#ffddb8",
+                        "surface-container-high": "#dce9ff",
+                        "secondary-fixed-dim": "#a9c7ff",
+                        "inverse-surface": "#213145",
+                        "secondary": "#005db7",
+                        "primary-fixed-dim": "#88d98f",
+                        "primary-container": "#2e7d3e",
+                        "on-primary-container": "#ccffcb",
+                        "on-surface": "#0b1c30"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+        .glass-header {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+        }
+        .tabular-numbers { font-variant-numeric: tabular-nums; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopNavBar (Shared Component) -->
+<header class="fixed top-0 w-full z-40 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm dark:shadow-none font-['Manrope'] font-semibold tabular-nums">
+<div class="flex justify-between items-center h-16 px-6 w-full">
+<div class="flex items-center gap-8">
+<div class="text-xl font-bold text-green-800 dark:text-green-500">Saylani Livestock</div>
+<div class="hidden md:flex items-center bg-slate-100 dark:bg-slate-800 rounded-full px-4 py-2 w-64">
+<span class="material-symbols-outlined text-slate-400 mr-2" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-full" placeholder="Search..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors p-2 rounded-full active:scale-95 duration-150">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors p-2 rounded-full active:scale-95 duration-150">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+<div class="flex items-center gap-2 pl-4 ml-2 border-l border-slate-200">
+<div class="text-right">
+<p class="text-xs font-bold text-on-surface">Admin</p>
+<p class="text-[10px] text-slate-500">Gulshan Branch</p>
+</div>
+<img alt="User profile" class="w-8 h-8 rounded-full border border-primary/20" data-alt="Close-up professional headshot of a man with a friendly expression in a modern business casual outfit" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiRjq25S-N022EefphO1ye7egNs_V6piPSQzAV4cNoU5bWSbkt-zm3PUfgRlfgEw2U9ES5OfogQKfy0E7Eh0wC2NtKW04QOAs-Y5XqMBdDMTAxRjDjvoKv1e8ouvNm6PNMp1ySv42L0w3aTF0XMoD-PDQgC4J4BDgekskhNXhetS02_qgeRAMhFTPieAYOxc63PGmkuz2htze8Q8HDj8Y63cxF7g_f4v5So3mKDD4kyFM1dXDL2VnoFZGhmbeJP0eRYT7lwtZpo0w"/>
+</div>
+</div>
+</div>
+</header>
+<!-- SideNavBar (Shared Component) -->
+<aside class="flex flex-col fixed left-0 top-0 h-full z-50 py-6 bg-slate-50 dark:bg-slate-950 h-screen w-64 border-r-0 font-['Manrope'] text-sm tracking-wide">
+<div class="px-8 mb-10">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-white">
+<span class="material-symbols-outlined" data-icon="pets" style="font-variation-settings: 'FILL' 1;">pets</span>
+</div>
+<div>
+<h2 class="text-lg font-black text-green-800 dark:text-green-400 leading-none">Verdant Archive</h2>
+<p class="text-[10px] text-slate-500 uppercase tracking-widest mt-1">Enterprise Tracking</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="text-slate-600 dark:text-slate-400 px-8 py-3 flex items-center gap-4 hover:text-green-700 dark:hover:text-green-300 transition-all active:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span> Overview
+            </a>
+<a class="text-green-800 dark:text-green-300 font-bold bg-white dark:bg-slate-900 rounded-l-full ml-4 pl-4 py-3 flex items-center gap-4 active:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span> Inventory
+            </a>
+<a class="text-slate-600 dark:text-slate-400 px-8 py-3 flex items-center gap-4 hover:text-green-700 dark:hover:text-green-300 transition-all active:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="pets">pets</span> Livestock
+            </a>
+<a class="text-slate-600 dark:text-slate-400 px-8 py-3 flex items-center gap-4 hover:text-green-700 dark:hover:text-green-300 transition-all active:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span> Reports
+            </a>
+<a class="text-slate-600 dark:text-slate-400 px-8 py-3 flex items-center gap-4 hover:text-green-700 dark:hover:text-green-300 transition-all active:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="precision_manufacturing">precision_manufacturing</span> Operations
+            </a>
+<a class="text-slate-600 dark:text-slate-400 px-8 py-3 flex items-center gap-4 hover:text-green-700 dark:hover:text-green-300 transition-all active:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span> Settings
+            </a>
+</nav>
+<div class="px-6 mb-6">
+<button class="w-full py-3 px-4 bg-primary text-white rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg shadow-primary/20 hover:scale-[1.02] transition-transform">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span> Quick Entry
+            </button>
+</div>
+<div class="pt-6 border-t border-slate-200 dark:border-slate-800">
+<a class="text-slate-600 dark:text-slate-400 px-8 py-3 flex items-center gap-4 hover:text-green-700 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="contact_support">contact_support</span> Support
+            </a>
+<a class="text-slate-600 dark:text-slate-400 px-8 py-3 flex items-center gap-4 hover:text-error transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span> Logout
+            </a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-64 mt-16 p-8 min-h-screen bg-surface">
+<!-- Header Section -->
+<header class="mb-10">
+<div class="flex justify-between items-end">
+<div>
+<h1 class="text-4xl font-extrabold text-on-background tracking-tight mb-2">Branch Inventory</h1>
+<div class="flex items-center gap-2 text-on-surface-variant font-medium">
+<span class="material-symbols-outlined text-primary" data-icon="location_on">location_on</span>
+                        Current stock at Gulshan Branch
+                    </div>
+</div>
+<div class="flex gap-3">
+<button class="px-5 py-2.5 bg-surface-container-high text-on-primary-fixed-variant rounded-xl font-semibold flex items-center gap-2 transition-all hover:bg-surface-container-highest">
+<span class="material-symbols-outlined text-xl" data-icon="file_download">file_download</span>
+                        Export PDF
+                    </button>
+<button class="px-6 py-2.5 bg-gradient-to-br from-primary to-primary-container text-white rounded-xl font-bold shadow-md hover:shadow-lg transition-all active:scale-95">
+                        Update Stock
+                    </button>
+</div>
+</div>
+</header>
+<!-- Inventory Summary Bento -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+<!-- Gosht Card -->
+<div class="relative overflow-hidden bg-surface-container-lowest p-8 rounded-xl transition-all duration-300 hover:-translate-y-1">
+<div class="absolute -right-4 -bottom-4 opacity-10">
+<span class="material-symbols-outlined text-primary text-[120px]" data-icon="restaurant" style="font-variation-settings: 'FILL' 1;">restaurant</span>
+</div>
+<div class="flex items-center gap-3 mb-6">
+<div class="w-12 h-12 rounded-xl bg-primary-fixed flex items-center justify-center text-on-primary-fixed-variant">
+<span class="material-symbols-outlined" data-icon="restaurant">restaurant</span>
+</div>
+<span class="text-sm font-bold tracking-widest text-on-surface-variant uppercase">Gosht</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-5xl font-extrabold tabular-numbers text-on-background">2,450</span>
+<span class="text-xl font-semibold text-slate-500">kg</span>
+</div>
+<div class="mt-4 flex items-center text-xs font-bold text-primary bg-primary-fixed/30 w-fit px-2 py-1 rounded-full">
+<span class="material-symbols-outlined text-sm mr-1" data-icon="trending_up">trending_up</span>
+                    +12% from last week
+                </div>
+</div>
+<!-- Khal Card -->
+<div class="relative overflow-hidden bg-surface-container-lowest p-8 rounded-xl transition-all duration-300 hover:-translate-y-1">
+<div class="absolute -right-4 -bottom-4 opacity-10">
+<span class="material-symbols-outlined text-secondary text-[120px]" data-icon="category" style="font-variation-settings: 'FILL' 1;">category</span>
+</div>
+<div class="flex items-center gap-3 mb-6">
+<div class="w-12 h-12 rounded-xl bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed-variant">
+<span class="material-symbols-outlined" data-icon="category">category</span>
+</div>
+<span class="text-sm font-bold tracking-widest text-on-surface-variant uppercase">Khal</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-5xl font-extrabold tabular-numbers text-on-background">136</span>
+<span class="text-xl font-semibold text-slate-500">pieces</span>
+</div>
+<div class="mt-4 flex items-center text-xs font-bold text-secondary bg-secondary-fixed/30 w-fit px-2 py-1 rounded-full">
+<span class="material-symbols-outlined text-sm mr-1" data-icon="inventory">inventory</span>
+                    Optimal Level
+                </div>
+</div>
+<!-- Paye Card -->
+<div class="relative overflow-hidden bg-surface-container-lowest p-8 rounded-xl transition-all duration-300 hover:-translate-y-1">
+<div class="absolute -right-4 -bottom-4 opacity-10">
+<span class="material-symbols-outlined text-tertiary text-[120px]" data-icon="pets" style="font-variation-settings: 'FILL' 1;">pets</span>
+</div>
+<div class="flex items-center gap-3 mb-6">
+<div class="w-12 h-12 rounded-xl bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed-variant">
+<span class="material-symbols-outlined" data-icon="pets">pets</span>
+</div>
+<span class="text-sm font-bold tracking-widest text-on-surface-variant uppercase">Paye</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-5xl font-extrabold tabular-numbers text-on-background">544</span>
+<span class="text-xl font-semibold text-slate-500">pieces</span>
+</div>
+<div class="mt-4 flex items-center text-xs font-bold text-tertiary bg-tertiary-fixed/30 w-fit px-2 py-1 rounded-full">
+<span class="material-symbols-outlined text-sm mr-1" data-icon="warning">warning</span>
+                    Stock replenishment required
+                </div>
+</div>
+</div>
+<!-- Inventory History Table -->
+<section>
+<div class="flex items-center justify-between mb-6">
+<h2 class="text-2xl font-bold text-on-background">Inventory History</h2>
+<div class="flex items-center gap-4">
+<div class="flex bg-surface-container-low rounded-lg p-1">
+<button class="px-4 py-1.5 bg-white shadow-sm rounded-md text-xs font-bold">All Entries</button>
+<button class="px-4 py-1.5 text-xs font-medium text-slate-500">Additions</button>
+<button class="px-4 py-1.5 text-xs font-medium text-slate-500">Reductions</button>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-2xl overflow-hidden">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low/50">
+<th class="px-6 py-4 text-[10px] font-black uppercase tracking-widest text-on-surface-variant">Date</th>
+<th class="px-6 py-4 text-[10px] font-black uppercase tracking-widest text-on-surface-variant">Entry Type</th>
+<th class="px-6 py-4 text-[10px] font-black uppercase tracking-widest text-on-surface-variant">Gosht Added</th>
+<th class="px-6 py-4 text-[10px] font-black uppercase tracking-widest text-on-surface-variant">Khal Added</th>
+<th class="px-6 py-4 text-[10px] font-black uppercase tracking-widest text-on-surface-variant">Paye Added</th>
+<th class="px-6 py-4 text-[10px] font-black uppercase tracking-widest text-on-surface-variant">Recorded By</th>
+<th class="px-6 py-4 text-[10px] font-black uppercase tracking-widest text-on-surface-variant">Reference</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container">
+<tr class="hover:bg-surface-container-low/30 transition-colors group">
+<td class="px-6 py-5 tabular-numbers font-medium text-on-surface">Oct 24, 2023</td>
+<td class="px-6 py-5">
+<span class="bg-primary-fixed text-on-primary-fixed-variant px-3 py-1 rounded-full text-[10px] font-bold uppercase">New Slaughter</span>
+</td>
+<td class="px-6 py-5 tabular-numbers font-bold text-primary">+450 kg</td>
+<td class="px-6 py-5 tabular-numbers font-bold text-secondary">+24 pcs</td>
+<td class="px-6 py-5 tabular-numbers font-bold text-tertiary">+96 pcs</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-slate-200"></div>
+<span class="text-sm font-medium">Ahmed Khan</span>
+</div>
+</td>
+<td class="px-6 py-5 text-sm text-slate-500 font-mono tracking-tight">BATCH-2023-A91</td>
+</tr>
+<tr class="hover:bg-surface-container-low/30 transition-colors group">
+<td class="px-6 py-5 tabular-numbers font-medium text-on-surface">Oct 23, 2023</td>
+<td class="px-6 py-5">
+<span class="bg-secondary-fixed text-on-secondary-fixed-variant px-3 py-1 rounded-full text-[10px] font-bold uppercase">Restock</span>
+</td>
+<td class="px-6 py-5 tabular-numbers font-bold text-primary">+120 kg</td>
+<td class="px-6 py-5 tabular-numbers font-bold text-secondary">+12 pcs</td>
+<td class="px-6 py-5 tabular-numbers font-bold text-tertiary">+48 pcs</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-slate-200"></div>
+<span class="text-sm font-medium">Saima Aziz</span>
+</div>
+</td>
+<td class="px-6 py-5 text-sm text-slate-500 font-mono tracking-tight">PO-88219-G</td>
+</tr>
+<tr class="hover:bg-surface-container-low/30 transition-colors group">
+<td class="px-6 py-5 tabular-numbers font-medium text-on-surface">Oct 22, 2023</td>
+<td class="px-6 py-5">
+<span class="bg-primary-fixed text-on-primary-fixed-variant px-3 py-1 rounded-full text-[10px] font-bold uppercase">New Slaughter</span>
+</td>
+<td class="px-6 py-5 tabular-numbers font-bold text-primary">+510 kg</td>
+<td class="px-6 py-5 tabular-numbers font-bold text-secondary">+28 pcs</td>
+<td class="px-6 py-5 tabular-numbers font-bold text-tertiary">+112 pcs</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-slate-200"></div>
+<span class="text-sm font-medium">Ahmed Khan</span>
+</div>
+</td>
+<td class="px-6 py-5 text-sm text-slate-500 font-mono tracking-tight">BATCH-2023-A90</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Footer Stats Card -->
+<div class="mt-8 flex justify-end">
+<div class="bg-surface-container-low px-6 py-4 rounded-xl flex items-center gap-4 border border-outline-variant/10">
+<div class="flex -space-x-2">
+<img alt="Auditor" class="w-6 h-6 rounded-full ring-2 ring-white" data-alt="Close-up of a professional auditor face" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGsejk2hatGl8BfYtgtVY6FNTv4Wp9d8WzC5YD0sTV9UtskXUJUi1Ylc3XATXZG6KImzJL5Xtm79I-JmQQXDRrfBLvAXqxgH0sUgkqZshjZBcDHxW297cxR1XWIGW06Q9JTQdvhc_3TJ3JEq_8kO13jgTlr0yqczuwMw8oeU0uSEjxGaXkdGTamMrxvQEkTzsnTPGx5-TkvnmH_5AlGqz1WeTUxUwC2GXnAfsJ60rRgwHhjNV0u6lvgFwROTeadb7zJZ4vC7v8epU"/>
+<img alt="Manager" class="w-6 h-6 rounded-full ring-2 ring-white" data-alt="Close-up portrait of a woman in corporate attire" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQFWsBGo-xq5wzdOHFzYj-zfwDeihfVQyPm9LAPbVsgBSiTlTMPiA_HoSih4JeYEUQROmFtbzUsP7JHAOTNo4MTwEwtylkjDrnQFBnqc9wqupVlTIvwa_n7nd5tkWNa46kTqYB1Xlw2bHE2zoI5-3H7GkGSoqIHwYvS9xTjwpopebp9HK303mPjST2fI6pfW9S_NS0MG9C4t1HveIN0QLTFgUB3600lgUua1z6oKHLwBuIAJBPPtgsQk1V6oiXP6zDI0QOmRsoN7M"/>
+</div>
+<div class="text-sm">
+<span class="text-slate-500 font-medium">Last updated:</span>
+<span class="text-on-surface font-bold ml-1">Today, 2:30 PM</span>
+</div>
+<div class="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+</div>
+</div>
+</section>
+</main>
+<!-- Floating Mobile Nav Placeholder (Hidden on Desktop) -->
+<div class="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 flex bg-white/90 backdrop-blur-md rounded-full shadow-2xl px-6 py-3 items-center gap-8 z-50">
+<span class="material-symbols-outlined text-slate-400" data-icon="dashboard">dashboard</span>
+<span class="material-symbols-outlined text-primary" data-icon="inventory_2" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+<div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white -mt-10 shadow-lg shadow-primary/30">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</div>
+<span class="material-symbols-outlined text-slate-400" data-icon="analytics">analytics</span>
+<span class="material-symbols-outlined text-slate-400" data-icon="person">person</span>
+</div>
+</body></html>

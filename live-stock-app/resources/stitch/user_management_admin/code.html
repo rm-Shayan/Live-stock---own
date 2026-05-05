@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>User Management - Saylani Livestock</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "error-container": "#ffdad6",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#0b1c30",
+                        "surface-container-highest": "#d3e4fe",
+                        "tertiary-container": "#9b6200",
+                        "on-error": "#ffffff",
+                        "surface-variant": "#d3e4fe",
+                        "secondary-fixed": "#d6e3ff",
+                        "on-tertiary-container": "#fff0e3",
+                        "surface-bright": "#f8f9ff",
+                        "outline": "#707a6e",
+                        "outline-variant": "#bfc9bb",
+                        "on-error-container": "#93000a",
+                        "surface": "#f8f9ff",
+                        "background": "#f8f9ff",
+                        "on-secondary-fixed": "#001b3d",
+                        "surface-container-low": "#eff4ff",
+                        "on-primary-fixed": "#002108",
+                        "error": "#ba1a1a",
+                        "surface-dim": "#cbdbf5",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#e5eeff",
+                        "on-tertiary-fixed": "#2a1700",
+                        "inverse-primary": "#88d98f",
+                        "primary": "#0c6328",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "secondary-container": "#64a1ff",
+                        "primary-fixed": "#a3f6a9",
+                        "on-secondary-fixed-variant": "#00468c",
+                        "on-primary-fixed-variant": "#00531e",
+                        "on-primary": "#ffffff",
+                        "on-secondary-container": "#003670",
+                        "surface-tint": "#1a6c30",
+                        "tertiary": "#7a4c00",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-surface-variant": "#40493f",
+                        "tertiary-fixed": "#ffddb8",
+                        "surface-container-high": "#dce9ff",
+                        "secondary-fixed-dim": "#a9c7ff",
+                        "inverse-surface": "#213145",
+                        "secondary": "#005db7",
+                        "primary-fixed-dim": "#88d98f",
+                        "primary-container": "#2e7d3e",
+                        "on-primary-container": "#ccffcb",
+                        "on-surface": "#0b1c30"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-headline { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .tabular-nums { font-variant-numeric: tabular-nums; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-40 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center h-16 px-6 w-full">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold text-green-800 dark:text-green-500 font-headline">Saylani Livestock</span>
+<div class="hidden md:flex items-center gap-6">
+<a class="text-slate-500 dark:text-slate-400 font-headline font-semibold text-sm transition-colors hover:text-green-700" href="#">Overview</a>
+<a class="text-slate-500 dark:text-slate-400 font-headline font-semibold text-sm transition-colors hover:text-green-700" href="#">Livestock</a>
+<a class="text-green-700 dark:text-green-400 font-bold border-b-2 border-green-700 font-headline text-sm py-5" href="#">Settings</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+<input class="bg-slate-100 border-none rounded-full py-2 pl-10 pr-4 text-sm focus:ring-2 focus:ring-primary w-64" placeholder="Search system..." type="text"/>
+</div>
+<button class="p-2 text-slate-500 hover:bg-slate-50 rounded-full transition-colors active:scale-95 duration-150">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<div class="h-8 w-[1px] bg-slate-200 mx-2"></div>
+<div class="flex items-center gap-3">
+<div class="text-right hidden lg:block">
+<p class="text-xs font-bold text-on-background leading-none">Admin User</p>
+<p class="text-[10px] text-slate-500">Super Admin</p>
+</div>
+<img class="h-10 w-10 rounded-full object-cover border-2 border-primary-fixed" data-alt="Close up portrait of a professional male administrator in a clean office setting, soft corporate lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAm-tCUuFyfQG3AqlLr9TAU17M8GkXHRU-HBYppkPmfheL5QaxO_IPw3HmWbQ8qvU9RLNLRsFz_a5ijDt6eotzkMJo-YbIDtXdjaeFC6t-UTuXw-Czq4T8MWtBWaTFO08yRedTOYcElC5dqBOtyh5BlrpMXnkwNiXiaK61Jp2OJx30nm5uc0Jy6qN7gT4K3c7dPfhBPTNt4adPZTBx7MzkKcW8DqSRe4BkU_lYzsj8tp7QW4s3mlYjsZjxqZ1SOoevkqE0hkJQ7wMg"/>
+</div>
+</div>
+</div>
+<div class="bg-slate-100 dark:bg-slate-800 h-[1px]"></div>
+</header>
+<!-- SideNavBar -->
+<aside class="flex flex-col fixed left-0 top-0 h-full z-50 py-6 h-screen w-64 border-r-0 bg-slate-50 dark:bg-slate-950 hidden md:flex">
+<div class="px-8 mb-10">
+<h2 class="text-lg font-black text-green-800 dark:text-green-400 font-headline tracking-tight">Verdant Archive</h2>
+<p class="text-[10px] uppercase tracking-[0.2em] text-slate-500 font-bold">Enterprise Tracking</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 text-slate-600 dark:text-slate-400 px-8 py-3 hover:text-green-700 dark:hover:text-green-300 transition-all active:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-headline text-sm tracking-wide">Overview</span>
+</a>
+<a class="flex items-center gap-3 text-slate-600 dark:text-slate-400 px-8 py-3 hover:text-green-700 dark:hover:text-green-300 transition-all active:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="pets">pets</span>
+<span class="font-headline text-sm tracking-wide">Livestock</span>
+</a>
+<a class="flex items-center gap-3 text-slate-600 dark:text-slate-400 px-8 py-3 hover:text-green-700 dark:hover:text-green-300 transition-all active:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-headline text-sm tracking-wide">Reports</span>
+</a>
+<a class="flex items-center gap-3 text-slate-600 dark:text-slate-400 px-8 py-3 hover:text-green-700 dark:hover:text-green-300 transition-all active:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="precision_manufacturing">precision_manufacturing</span>
+<span class="font-headline text-sm tracking-wide">Operations</span>
+</a>
+<a class="flex items-center gap-3 text-slate-600 dark:text-slate-400 px-8 py-3 hover:text-green-700 dark:hover:text-green-300 transition-all active:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-headline text-sm tracking-wide">Inventory</span>
+</a>
+<a class="flex items-center gap-3 text-green-800 dark:text-green-300 font-bold bg-white dark:bg-slate-900 rounded-l-full ml-4 pl-4 py-3 active:translate-x-1 duration-200 shadow-sm" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-headline text-sm tracking-wide">Settings</span>
+</a>
+</nav>
+<div class="px-6 mt-6">
+<button class="w-full bg-gradient-to-br from-primary to-primary-container text-white py-3 rounded-xl font-bold text-sm shadow-md active:scale-95 transition-transform flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">add</span>
+                Quick Entry
+            </button>
+</div>
+<div class="mt-auto border-t border-slate-200 dark:border-slate-800 pt-6">
+<a class="flex items-center gap-3 text-slate-600 dark:text-slate-400 px-8 py-3 hover:text-green-700 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="contact_support">contact_support</span>
+<span class="font-headline text-sm tracking-wide">Support</span>
+</a>
+<a class="flex items-center gap-3 text-slate-600 dark:text-slate-400 px-8 py-3 hover:text-red-600 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-headline text-sm tracking-wide">Logout</span>
+</a>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="md:ml-64 pt-24 px-6 pb-12 transition-all duration-300">
+<div class="max-w-7xl mx-auto">
+<!-- Header Section -->
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-10">
+<div>
+<h1 class="text-4xl font-extrabold text-on-background font-headline tracking-tight">User Management</h1>
+<p class="text-on-surface-variant font-medium mt-1">Manage system users and access permissions across branches.</p>
+</div>
+<button class="bg-gradient-to-br from-primary to-primary-container text-white px-6 py-3 rounded-xl font-bold shadow-lg shadow-primary/20 flex items-center gap-2 active:scale-95 transition-all">
+<span class="material-symbols-outlined">person_add</span>
+                    Add New User
+                </button>
+</div>
+<!-- Stats Overview (Asymmetric) -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-10">
+<div class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm border border-outline-variant/10">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">Total Users</p>
+<h3 class="text-3xl font-black font-headline tabular-nums text-on-background">142</h3>
+</div>
+<div class="p-3 bg-primary-fixed text-on-primary-fixed-variant rounded-xl">
+<span class="material-symbols-outlined">group</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm border border-outline-variant/10">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">Active Now</p>
+<h3 class="text-3xl font-black font-headline tabular-nums text-on-background">28</h3>
+</div>
+<div class="p-3 bg-secondary-fixed text-on-secondary-fixed-variant rounded-xl">
+<span class="material-symbols-outlined">online_prediction</span>
+</div>
+</div>
+</div>
+<div class="md:col-span-2 bg-primary-container/10 p-6 rounded-2xl flex items-center justify-between overflow-hidden relative border border-primary/10">
+<div class="relative z-10">
+<h4 class="font-headline font-bold text-on-primary-fixed-variant text-lg">Access Security Audit</h4>
+<p class="text-on-primary-fixed-variant/70 text-sm max-w-xs">All 142 users have multi-factor authentication enabled. Last security scan: 2 hours ago.</p>
+<button class="mt-4 text-xs font-bold text-primary flex items-center gap-1 hover:underline">
+                            View Security Log <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<span class="material-symbols-outlined text-8xl absolute -right-4 -bottom-4 text-primary/5 select-none" style="font-variation-settings: 'FILL' 1;">security</span>
+</div>
+</div>
+<!-- User Table Card -->
+<div class="bg-surface-container-lowest rounded-[2rem] shadow-sm overflow-hidden">
+<div class="px-8 py-6 flex flex-wrap items-center justify-between gap-4">
+<div class="flex items-center gap-4">
+<button class="px-4 py-2 bg-surface-container-low text-on-background font-bold text-sm rounded-full transition-colors hover:bg-surface-container-high">All Roles</button>
+<button class="px-4 py-2 text-slate-500 font-bold text-sm rounded-full transition-colors hover:bg-surface-container-low">Administrators</button>
+<button class="px-4 py-2 text-slate-500 font-bold text-sm rounded-full transition-colors hover:bg-surface-container-low">Managers</button>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex border border-outline-variant/30 rounded-full p-1 bg-surface-container-low">
+<button class="p-2 bg-white rounded-full shadow-sm">
+<span class="material-symbols-outlined text-sm">grid_view</span>
+</button>
+<button class="p-2 text-slate-400">
+<span class="material-symbols-outlined text-sm">list</span>
+</button>
+</div>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low/50 border-b border-outline-variant/10">
+<th class="px-8 py-5 text-xs font-bold text-slate-500 uppercase tracking-widest">Name</th>
+<th class="px-6 py-5 text-xs font-bold text-slate-500 uppercase tracking-widest">Email</th>
+<th class="px-6 py-5 text-xs font-bold text-slate-500 uppercase tracking-widest">Role</th>
+<th class="px-6 py-5 text-xs font-bold text-slate-500 uppercase tracking-widest">Branch</th>
+<th class="px-6 py-5 text-xs font-bold text-slate-500 uppercase tracking-widest">Status</th>
+<th class="px-6 py-5 text-xs font-bold text-slate-500 uppercase tracking-widest">Last Login</th>
+<th class="px-8 py-5 text-xs font-bold text-slate-500 uppercase tracking-widest text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100">
+<!-- User Row 1 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-8 py-5">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed font-bold">ZS</div>
+<span class="font-bold text-on-background">Zain Siddiqui</span>
+</div>
+</td>
+<td class="px-6 py-5 text-sm text-on-surface-variant font-medium">zain.s@saylani.org</td>
+<td class="px-6 py-5">
+<span class="bg-primary-fixed text-on-primary-fixed-variant px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider">Admin</span>
+</td>
+<td class="px-6 py-5 text-sm text-slate-500 font-medium">—</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-2">
+<span class="h-2 w-2 rounded-full bg-primary"></span>
+<span class="text-xs font-bold text-primary">Active</span>
+</div>
+</td>
+<td class="px-6 py-5 text-sm tabular-nums text-slate-500">2024-05-24 09:12 AM</td>
+<td class="px-8 py-5 text-right">
+<div class="flex items-center justify-end gap-2">
+<button class="p-2 text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg">edit</span>
+</button>
+<button class="relative inline-flex h-5 w-9 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none bg-primary">
+<span class="translate-x-4 inline-block h-4 w-4 transform rounded-full bg-white transition duration-200 ease-in-out shadow-sm"></span>
+</button>
+</div>
+</td>
+</tr>
+<!-- User Row 2 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-8 py-5">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed font-bold">MK</div>
+<span class="font-bold text-on-background">Marium Khan</span>
+</div>
+</td>
+<td class="px-6 py-5 text-sm text-on-surface-variant font-medium">marium.k@saylani.org</td>
+<td class="px-6 py-5">
+<span class="bg-secondary-fixed text-on-secondary-fixed-variant px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider">Manager</span>
+</td>
+<td class="px-6 py-5 text-sm text-slate-500 font-medium">Karachi North</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-2">
+<span class="h-2 w-2 rounded-full bg-primary"></span>
+<span class="text-xs font-bold text-primary">Active</span>
+</div>
+</td>
+<td class="px-6 py-5 text-sm tabular-nums text-slate-500">2024-05-23 04:45 PM</td>
+<td class="px-8 py-5 text-right">
+<div class="flex items-center justify-end gap-2">
+<button class="p-2 text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg">edit</span>
+</button>
+<button class="relative inline-flex h-5 w-9 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none bg-primary">
+<span class="translate-x-4 inline-block h-4 w-4 transform rounded-full bg-white transition duration-200 ease-in-out shadow-sm"></span>
+</button>
+</div>
+</td>
+</tr>
+<!-- User Row 3 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-8 py-5">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-full bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed font-bold">AR</div>
+<span class="font-bold text-on-background">Ahmed Raza</span>
+</div>
+</td>
+<td class="px-6 py-5 text-sm text-on-surface-variant font-medium">ahmed.r@saylani.org</td>
+<td class="px-6 py-5">
+<span class="bg-tertiary-fixed text-on-tertiary-fixed-variant px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider">Staff</span>
+</td>
+<td class="px-6 py-5 text-sm text-slate-500 font-medium">Lahore Central</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-2">
+<span class="h-2 w-2 rounded-full bg-error"></span>
+<span class="text-xs font-bold text-error">Inactive</span>
+</div>
+</td>
+<td class="px-6 py-5 text-sm tabular-nums text-slate-500">2024-04-12 11:30 AM</td>
+<td class="px-8 py-5 text-right">
+<div class="flex items-center justify-end gap-2">
+<button class="p-2 text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg">edit</span>
+</button>
+<button class="relative inline-flex h-5 w-9 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none bg-slate-300">
+<span class="translate-x-0 inline-block h-4 w-4 transform rounded-full bg-white transition duration-200 ease-in-out shadow-sm"></span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="px-8 py-6 border-t border-slate-100 flex items-center justify-between">
+<p class="text-xs text-slate-500 font-medium">Showing <span class="font-bold text-on-background">1-10</span> of <span class="font-bold text-on-background">142</span> users</p>
+<div class="flex gap-2">
+<button class="p-2 border border-outline-variant/30 rounded-lg hover:bg-slate-50 disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="p-2 border border-outline-variant/30 rounded-lg hover:bg-slate-50">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Add New User Modal (Drawer Overlay) -->
+<div class="fixed inset-0 z-50 overflow-hidden hidden">
+<!-- Backdrop -->
+<div class="absolute inset-0 bg-on-background/40 backdrop-blur-sm"></div>
+<!-- Drawer -->
+<div class="absolute inset-y-0 right-0 max-w-full flex">
+<div class="w-screen max-w-md bg-white shadow-2xl flex flex-col">
+<div class="px-8 py-8 border-b border-slate-100">
+<div class="flex items-center justify-between">
+<h2 class="text-2xl font-black font-headline text-on-background">Add New User</h2>
+<button class="p-2 hover:bg-slate-100 rounded-full transition-colors text-slate-400 hover:text-on-background">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<p class="text-on-surface-variant text-sm mt-1">Configure credentials and branch permissions.</p>
+</div>
+<div class="flex-1 overflow-y-auto px-8 py-8 space-y-6">
+<div class="space-y-1">
+<label class="text-xs font-bold uppercase tracking-widest text-slate-500">Full Name</label>
+<input class="w-full bg-surface-container-low border-none rounded-xl py-3 focus:ring-2 focus:ring-primary" placeholder="e.g. John Doe" type="text"/>
+</div>
+<div class="space-y-1">
+<label class="text-xs font-bold uppercase tracking-widest text-slate-500">Email Address</label>
+<input class="w-full bg-surface-container-low border-none rounded-xl py-3 focus:ring-2 focus:ring-primary" placeholder="john.doe@saylani.org" type="email"/>
+</div>
+<div class="space-y-1">
+<label class="text-xs font-bold uppercase tracking-widest text-slate-500">Temporary Password</label>
+<div class="relative">
+<input class="w-full bg-surface-container-low border-none rounded-xl py-3 focus:ring-2 focus:ring-primary" type="password" value="********"/>
+<button class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400">
+<span class="material-symbols-outlined text-sm">visibility</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-1">
+<label class="text-xs font-bold uppercase tracking-widest text-slate-500">Role</label>
+<select class="w-full bg-surface-container-low border-none rounded-xl py-3 focus:ring-2 focus:ring-primary text-sm">
+<option>Admin</option>
+<option>Manager</option>
+<option>Staff</option>
+</select>
+</div>
+<div class="space-y-1">
+<label class="text-xs font-bold uppercase tracking-widest text-slate-500">Status</label>
+<select class="w-full bg-surface-container-low border-none rounded-xl py-3 focus:ring-2 focus:ring-primary text-sm">
+<option>Active</option>
+<option>Inactive</option>
+</select>
+</div>
+</div>
+<div class="space-y-1 opacity-50">
+<label class="text-xs font-bold uppercase tracking-widest text-slate-500">Assigned Branch</label>
+<select class="w-full bg-slate-200 border-none rounded-xl py-3 cursor-not-allowed text-sm" disabled="">
+<option>All Branches (Admin Default)</option>
+</select>
+<p class="text-[10px] text-slate-400 italic">Branch assignment is disabled for Admin roles.</p>
+</div>
+<div class="p-4 bg-primary-container/10 rounded-2xl flex gap-3 items-start">
+<span class="material-symbols-outlined text-primary">info</span>
+<p class="text-xs text-on-primary-fixed-variant leading-relaxed">The user will be required to change their password upon their first successful login.</p>
+</div>
+</div>
+<div class="px-8 py-6 bg-slate-50 border-t border-slate-200 flex gap-4">
+<button class="flex-1 py-3 font-bold text-slate-500 hover:bg-slate-200 rounded-xl transition-colors">Cancel</button>
+<button class="flex-1 py-3 font-bold bg-gradient-to-br from-primary to-primary-container text-white rounded-xl shadow-lg shadow-primary/20 active:scale-95 transition-all">Create User</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Mobile BottomNavBar -->
+<nav class="md:hidden fixed bottom-0 w-full bg-white border-t border-slate-100 flex justify-around items-center py-3 z-40">
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-[10px] font-bold">Home</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined">pets</span>
+<span class="text-[10px] font-bold">Livestock</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-green-700">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">settings</span>
+<span class="text-[10px] font-bold">Settings</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-bold">Profile</span>
+</button>
+</nav>
+</body></html>

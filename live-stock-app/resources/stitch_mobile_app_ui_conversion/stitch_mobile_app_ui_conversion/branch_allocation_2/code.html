@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Digital Pastoral - Branch Allocation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary": "#4d6453",
+                        "primary-fixed": "#92f9a7",
+                        "on-secondary-container": "#536a59",
+                        "inverse-primary": "#76dc8d",
+                        "secondary-fixed": "#d0e9d4",
+                        "outline-variant": "#becabc",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-container": "#636f66",
+                        "secondary-fixed-dim": "#b4cdb9",
+                        "on-primary-fixed": "#00210a",
+                        "on-tertiary-fixed-variant": "#3e4a41",
+                        "on-primary": "#ffffff",
+                        "on-surface": "#181d1b",
+                        "error": "#ba1a1a",
+                        "background": "#f6faf7",
+                        "on-error": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed-variant": "#005224",
+                        "primary": "#00612c",
+                        "surface-bright": "#f6faf7",
+                        "primary-container": "#007d3a",
+                        "surface-tint": "#006d32",
+                        "primary-fixed-dim": "#76dc8d",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed-dim": "#bdcabe",
+                        "outline": "#6f7a6e",
+                        "on-error-container": "#93000a",
+                        "surface-container": "#ebefec",
+                        "on-tertiary-container": "#e5f2e6",
+                        "surface-container-high": "#e5e9e6",
+                        "surface": "#f6faf7",
+                        "on-secondary-fixed-variant": "#364c3d",
+                        "inverse-on-surface": "#eef2ef",
+                        "surface-dim": "#d7dbd8",
+                        "on-primary-container": "#b9ffc2",
+                        "tertiary": "#4b574e",
+                        "tertiary-fixed": "#d9e6da",
+                        "inverse-surface": "#2d3130",
+                        "on-secondary-fixed": "#0b2013",
+                        "secondary-container": "#d0e9d4",
+                        "error-container": "#ffdad6",
+                        "on-surface-variant": "#3f4a3f",
+                        "surface-container-highest": "#dfe3e1",
+                        "surface-variant": "#dfe3e1",
+                        "surface-container-low": "#f1f5f2",
+                        "on-background": "#181d1b",
+                        "on-tertiary-fixed": "#131e17"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background font-body text-on-background selection:bg-primary-fixed selection:text-on-primary-fixed antialiased">
+<!-- TopAppBar -->
+<header class="bg-emerald-50/80 dark:bg-stone-900/80 backdrop-blur-md shadow-sm dark:shadow-none fixed top-0 w-full z-50">
+<div class="flex justify-between items-center w-full px-6 py-4">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-emerald-900 dark:text-emerald-500 cursor-pointer">menu</span>
+<h1 class="text-xl font-black text-emerald-900 dark:text-emerald-50 font-headline tracking-tight">Digital Pastoral</h1>
+</div>
+<div class="flex items-center">
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container-high border-2 border-primary-container/20">
+<img alt="Manager Profile" class="w-full h-full object-cover" data-alt="Close up portrait of a professional farm manager wearing a neutral toned outdoor utility shirt looking friendly" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDixh6lYldNT51fw6THYqMwWQY_4uX-Dfct03ZnEpKEW-bcgSStD3h9sMSoO13oOcNgVISKobhRG1CEARlqew8H413uYK1O3T2cgXrPkO4Sy2NnKiH6BUGz_PXPxgkTubiu9yaxsKXRO2QPfaNjYs-uqRx_ZdsmjOIoPMOtJzZmMr9RBgOX_r_l-vnOpPzo0-pGbe1MBafWO7y9nXH1iH9v6peTtxeHKu7SkyAwPDWnaI0CYPEtBBLt84VitmwBYlK7iHaUYq96qu4"/>
+</div>
+</div>
+</div>
+</header>
+<main class="pt-20 pb-32 px-6 space-y-8 max-w-lg mx-auto">
+<!-- Select Batch Section -->
+<section class="space-y-3">
+<label class="text-sm font-semibold text-secondary uppercase tracking-wider ml-1">Current Livestock Batch</label>
+<div class="relative group">
+<select class="w-full appearance-none bg-surface-container-lowest border-none py-4 px-5 rounded-full shadow-sm text-on-surface font-medium focus:ring-2 focus:ring-primary-container transition-all cursor-pointer">
+<option>Batch #2024-08-A</option>
+<option>Batch #2024-08-B</option>
+<option>Batch #2024-07-F</option>
+</select>
+<div class="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none text-outline">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</div>
+</section>
+<!-- Available Units Hero Card -->
+<section class="relative overflow-hidden bg-primary-container p-8 rounded-[2rem] shadow-lg">
+<div class="relative z-10">
+<p class="text-on-primary-container/80 font-medium text-sm tracking-wide uppercase">Available to allocate</p>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="text-5xl font-extrabold text-on-primary-container font-headline tracking-tighter">450</span>
+<span class="text-on-primary-container/90 font-semibold">Units</span>
+</div>
+</div>
+<!-- Organic shape background element -->
+<div class="absolute -bottom-10 -right-10 w-40 h-40 bg-white/10 rounded-full blur-3xl"></div>
+<div class="absolute -top-10 -left-10 w-32 h-32 bg-primary-fixed/20 rounded-full blur-2xl"></div>
+</section>
+<!-- Allocation Progress -->
+<section class="bg-surface-container-low p-6 rounded-[2rem] space-y-4">
+<div class="flex justify-between items-end">
+<div>
+<h3 class="text-lg font-bold text-on-surface font-headline leading-none">Total Allocation</h3>
+<p class="text-outline text-xs mt-1">Units distributed across network</p>
+</div>
+<p class="font-bold text-primary font-headline text-xl">350 <span class="text-outline text-sm font-medium">/ 450</span></p>
+</div>
+<div class="w-full bg-surface-container-high h-3 rounded-full overflow-hidden">
+<div class="bg-gradient-to-r from-primary to-primary-container h-full rounded-full transition-all duration-700" style="width: 77.7%"></div>
+</div>
+</section>
+<!-- Distribution Section -->
+<section class="space-y-4">
+<div class="flex items-center justify-between px-1">
+<h3 class="text-sm font-bold text-secondary uppercase tracking-widest">Distribution</h3>
+<span class="text-xs font-medium text-outline">3 Active Branches</span>
+</div>
+<div class="space-y-3">
+<!-- Branch 1 -->
+<div class="bg-surface-container-lowest p-5 rounded-full flex items-center justify-between shadow-sm transition-transform active:scale-[0.98]">
+<div class="flex flex-col">
+<span class="text-on-surface font-bold text-sm">Gulshan-e-Iqbal</span>
+<div class="w-24 mt-2">
+<input class="w-full h-1.5 bg-surface-container-high rounded-lg appearance-none cursor-pointer accent-primary" max="450" type="range" value="120"/>
+</div>
+</div>
+<div class="bg-secondary-container px-4 py-2 rounded-full">
+<span class="text-on-secondary-container font-black font-headline">120</span>
+</div>
+</div>
+<!-- Branch 2 -->
+<div class="bg-surface-container-lowest p-5 rounded-full flex items-center justify-between shadow-sm transition-transform active:scale-[0.98]">
+<div class="flex flex-col">
+<span class="text-on-surface font-bold text-sm">Korangi Industrial</span>
+<div class="w-24 mt-2">
+<input class="w-full h-1.5 bg-surface-container-high rounded-lg appearance-none cursor-pointer accent-primary" max="450" type="range" value="150"/>
+</div>
+</div>
+<div class="bg-secondary-container px-4 py-2 rounded-full">
+<span class="text-on-secondary-container font-black font-headline">150</span>
+</div>
+</div>
+<!-- Branch 3 -->
+<div class="bg-surface-container-lowest p-5 rounded-full flex items-center justify-between shadow-sm transition-transform active:scale-[0.98]">
+<div class="flex flex-col">
+<span class="text-on-surface font-bold text-sm">North Nazimabad</span>
+<div class="w-24 mt-2">
+<input class="w-full h-1.5 bg-surface-container-high rounded-lg appearance-none cursor-pointer accent-primary" max="450" type="range" value="80"/>
+</div>
+</div>
+<div class="bg-secondary-container px-4 py-2 rounded-full">
+<span class="text-on-secondary-container font-black font-headline">80</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Allocation History -->
+<section class="space-y-4">
+<h3 class="text-sm font-bold text-secondary uppercase tracking-widest px-1">Allocation History</h3>
+<div class="space-y-4">
+<!-- History Card 1 -->
+<div class="bg-surface-container-low p-5 rounded-3xl space-y-4">
+<div class="flex justify-between items-start">
+<div>
+<span class="text-xs font-bold text-primary bg-primary-fixed/30 px-2 py-0.5 rounded uppercase tracking-tighter">Batch #2024-07-F</span>
+<h4 class="mt-2 font-bold text-on-surface">Korangi Industrial</h4>
+</div>
+<span class="bg-secondary-container text-on-secondary-container text-[10px] font-black px-3 py-1 rounded-full uppercase">Complete</span>
+</div>
+<div class="flex justify-between items-center pt-2 border-t border-outline-variant/10">
+<span class="text-outline text-xs">240 Units Allocated</span>
+<span class="text-outline text-xs">12 Aug 2024</span>
+</div>
+</div>
+<!-- History Card 2 -->
+<div class="bg-surface-container-low p-5 rounded-3xl space-y-4">
+<div class="flex justify-between items-start">
+<div>
+<span class="text-xs font-bold text-primary bg-primary-fixed/30 px-2 py-0.5 rounded uppercase tracking-tighter">Batch #2024-08-A</span>
+<h4 class="mt-2 font-bold text-on-surface">Gulshan-e-Iqbal</h4>
+</div>
+<span class="bg-surface-container-highest text-on-surface-variant text-[10px] font-black px-3 py-1 rounded-full uppercase">In Progress</span>
+</div>
+<div class="flex justify-between items-center pt-2 border-t border-outline-variant/10">
+<span class="text-outline text-xs">120 Units Allocated</span>
+<span class="text-outline text-xs">Today</span>
+</div>
+</div>
+<!-- History Card 3 -->
+<div class="bg-surface-container-low p-5 rounded-3xl space-y-4 opacity-70">
+<div class="flex justify-between items-start">
+<div>
+<span class="text-xs font-bold text-primary bg-primary-fixed/30 px-2 py-0.5 rounded uppercase tracking-tighter">Batch #2024-07-F</span>
+<h4 class="mt-2 font-bold text-on-surface">North Nazimabad</h4>
+</div>
+<span class="bg-error-container text-on-error-container text-[10px] font-black px-3 py-1 rounded-full uppercase">Pending</span>
+</div>
+<div class="flex justify-between items-center pt-2 border-t border-outline-variant/10">
+<span class="text-outline text-xs">90 Units Allocated</span>
+<span class="text-outline text-xs">Pending Approval</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Sticky Confirm Button -->
+<div class="fixed bottom-[84px] left-0 w-full px-6 py-4 pointer-events-none">
+<button class="w-full bg-gradient-to-r from-primary to-primary-container text-on-primary py-5 rounded-full font-bold shadow-xl flex items-center justify-center gap-3 active:scale-95 transition-transform pointer-events-auto">
+<span>Confirm Allocation</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-white/80 dark:bg-stone-950/80 backdrop-blur-xl shadow-[0_-4px_20px_rgba(0,0,0,0.04)] rounded-t-[2rem]">
+<!-- Home -->
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 px-5 py-1.5 transition-transform scale-95 active:scale-90" href="#">
+<span class="material-symbols-outlined mb-1">home</span>
+<span class="font-['Inter'] text-[11px] font-semibold tracking-wide uppercase">Home</span>
+</a>
+<!-- Batches (Active) -->
+<a class="flex flex-col items-center justify-center bg-emerald-100 dark:bg-emerald-900/40 text-emerald-900 dark:text-emerald-100 rounded-full px-5 py-1.5 transition-transform scale-95 active:scale-90" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+<span class="font-['Inter'] text-[11px] font-semibold tracking-wide uppercase">Batches</span>
+</a>
+<!-- Reports -->
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 px-5 py-1.5 transition-transform scale-95 active:scale-90" href="#">
+<span class="material-symbols-outlined mb-1">analytics</span>
+<span class="font-['Inter'] text-[11px] font-semibold tracking-wide uppercase">Reports</span>
+</a>
+<!-- Profile -->
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 px-5 py-1.5 transition-transform scale-95 active:scale-90" href="#">
+<span class="material-symbols-outlined mb-1">person</span>
+<span class="font-['Inter'] text-[11px] font-semibold tracking-wide uppercase">Profile</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Livestock Batch Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-container": "#536a59",
+                    "outline": "#6f7a6e",
+                    "on-tertiary-fixed-variant": "#3e4a41",
+                    "surface-dim": "#d7dbd8",
+                    "on-secondary": "#ffffff",
+                    "on-primary-fixed": "#00210a",
+                    "tertiary-fixed": "#d9e6da",
+                    "primary-fixed-dim": "#76dc8d",
+                    "on-primary": "#ffffff",
+                    "secondary-fixed-dim": "#b4cdb9",
+                    "on-surface": "#181d1b",
+                    "on-error-container": "#93000a",
+                    "surface-container-low": "#f1f5f2",
+                    "outline-variant": "#becabc",
+                    "surface-bright": "#f6faf7",
+                    "error-container": "#ffdad6",
+                    "surface-container-highest": "#dfe3e1",
+                    "on-secondary-fixed-variant": "#364c3d",
+                    "on-primary-fixed-variant": "#005224",
+                    "inverse-on-surface": "#eef2ef",
+                    "background": "#f6faf7",
+                    "secondary": "#4d6453",
+                    "error": "#ba1a1a",
+                    "tertiary-fixed-dim": "#bdcabe",
+                    "tertiary-container": "#636f66",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-high": "#e5e9e6",
+                    "on-background": "#181d1b",
+                    "surface-variant": "#dfe3e1",
+                    "on-primary-container": "#b9ffc2",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-container": "#d0e9d4",
+                    "tertiary": "#4b574e",
+                    "primary-fixed": "#92f9a7",
+                    "on-surface-variant": "#3f4a3f",
+                    "inverse-primary": "#76dc8d",
+                    "secondary-fixed": "#d0e9d4",
+                    "surface-tint": "#006d32",
+                    "primary-container": "#007d3a",
+                    "on-secondary-fixed": "#0b2013",
+                    "surface-container": "#ebefec",
+                    "inverse-surface": "#2d3130",
+                    "on-tertiary-fixed": "#131e17",
+                    "surface": "#f6faf7",
+                    "on-tertiary-container": "#e5f2e6",
+                    "on-error": "#ffffff",
+                    "primary": "#00612c"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-headline { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bg-pastoral-gradient {
+            background: linear-gradient(135deg, #00612c 0%, #007d3a 100%);
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-emerald-50/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center px-6 py-4 w-full max-w-md mx-auto">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-secondary-container flex items-center justify-center">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="Close up portrait of a middle-aged farm manager with a friendly expression, wearing a neutral colored outdoor vest" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCy-IFfgrKj5uJplJsbyuAjbt1pCgJv8D-m02KGg7V9Xf0V1S3Bkc3v3Pj82NLteXVDwFmB9wQn1D_fdBHiO6mCnWhLrUb2iGfq0cDd2VnFvYSamMVmiyYMUBDSsUF8VTyHllYxov0LdamCTlv42GdtKtp1wlM472z2GfvvcsZUvuT4YBc87DTO3g44JOO3kwt9wNFqBaQnknaAavkp46hdpcBxU-mM0Xx2aGee0Xta10THsC02XtnuLnzqzP45Eu1CpRcIzclmbvY"/>
+</div>
+<h1 class="font-['Manrope'] text-lg font-bold tracking-tight text-emerald-900 dark:text-emerald-50">Livestock Batches</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 rounded-full hover:bg-emerald-100/50 dark:hover:bg-slate-800 transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined text-emerald-800 dark:text-emerald-400">notifications</span>
+</button>
+</div>
+</div>
+</header>
+<main class="pt-24 px-6 max-w-md mx-auto">
+<!-- Dashboard Header & Action -->
+<section class="mb-8">
+<div class="flex items-center justify-between mb-6">
+<div>
+<h2 class="font-headline text-2xl font-extrabold text-on-surface tracking-tight">Batch Management</h2>
+<p class="text-on-surface-variant text-sm mt-1">Efficient herd tracking &amp; allocation</p>
+</div>
+<button class="bg-pastoral-gradient text-on-primary p-3 rounded-full shadow-lg shadow-primary-container/20 active:scale-95 transition-transform flex items-center justify-center">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+<!-- Filter Chips -->
+<div class="flex gap-2 overflow-x-auto hide-scrollbar pb-2">
+<button class="bg-primary text-on-primary px-5 py-2 rounded-full text-sm font-semibold whitespace-nowrap shadow-md">All Batches</button>
+<button class="bg-surface-container-highest text-on-surface-variant px-5 py-2 rounded-full text-sm font-semibold whitespace-nowrap hover:bg-surface-container-high transition-colors">Allocated</button>
+<button class="bg-surface-container-highest text-on-surface-variant px-5 py-2 rounded-full text-sm font-semibold whitespace-nowrap hover:bg-surface-container-high transition-colors">Pending</button>
+</div>
+</section>
+<!-- Batch List -->
+<section class="space-y-4 mb-10">
+<!-- Batch Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<div>
+<span class="text-[10px] font-bold text-outline uppercase tracking-widest block mb-1">Batch ID</span>
+<h3 class="font-headline font-bold text-on-surface">#B-2023-002</h3>
+</div>
+<span class="bg-secondary-container text-on-secondary-container text-[10px] font-bold px-3 py-1 rounded-full uppercase">COMPLETE</span>
+</div>
+<div class="grid grid-cols-2 gap-y-4 mb-5">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">pets</span>
+<div>
+<p class="text-[10px] text-outline leading-none mb-1">Total Animals</p>
+<p class="text-sm font-bold text-on-surface">142 Units</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">category</span>
+<div>
+<p class="text-[10px] text-outline leading-none mb-1">Category</p>
+<p class="text-sm font-bold text-on-surface">Bulls</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">calendar_today</span>
+<div>
+<p class="text-[10px] text-outline leading-none mb-1">Arrival Date</p>
+<p class="text-sm font-bold text-on-surface">Oct 12, 2023</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">pie_chart</span>
+<div>
+<p class="text-[10px] text-outline leading-none mb-1">Allocated</p>
+<p class="text-sm font-bold text-on-surface">142 / 142</p>
+</div>
+</div>
+</div>
+<div class="h-1.5 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary w-full"></div>
+</div>
+</div>
+<!-- Batch Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<div>
+<span class="text-[10px] font-bold text-outline uppercase tracking-widest block mb-1">Batch ID</span>
+<h3 class="font-headline font-bold text-on-surface">#B-2023-045</h3>
+</div>
+<span class="bg-primary-fixed-dim/20 text-primary text-[10px] font-bold px-3 py-1 rounded-full uppercase">IN PROGRESS</span>
+</div>
+<div class="grid grid-cols-2 gap-y-4 mb-5">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">pets</span>
+<div>
+<p class="text-[10px] text-outline leading-none mb-1">Total Animals</p>
+<p class="text-sm font-bold text-on-surface">85 Units</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">category</span>
+<div>
+<p class="text-[10px] text-outline leading-none mb-1">Category</p>
+<p class="text-sm font-bold text-on-surface">Heifers</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">calendar_today</span>
+<div>
+<p class="text-[10px] text-outline leading-none mb-1">Arrival Date</p>
+<p class="text-sm font-bold text-on-surface">Nov 02, 2023</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">pie_chart</span>
+<div>
+<p class="text-[10px] text-outline leading-none mb-1">Allocated</p>
+<p class="text-sm font-bold text-on-surface">45 / 85</p>
+</div>
+</div>
+</div>
+<div class="h-1.5 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[53%]"></div>
+</div>
+</div>
+<!-- Batch Card 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm opacity-90">
+<div class="flex justify-between items-start mb-4">
+<div>
+<span class="text-[10px] font-bold text-outline uppercase tracking-widest block mb-1">Batch ID</span>
+<h3 class="font-headline font-bold text-on-surface">#B-2023-089</h3>
+</div>
+<span class="bg-error-container text-error text-[10px] font-bold px-3 py-1 rounded-full uppercase">PENDING</span>
+</div>
+<div class="grid grid-cols-2 gap-y-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">pets</span>
+<div>
+<p class="text-[10px] text-outline leading-none mb-1">Total Animals</p>
+<p class="text-sm font-bold text-on-surface">210 Units</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">category</span>
+<div>
+<p class="text-[10px] text-outline leading-none mb-1">Category</p>
+<p class="text-sm font-bold text-on-surface">Mixed</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Insights Section -->
+<section class="mb-10">
+<h3 class="font-headline text-lg font-bold text-on-surface mb-4">Optimization Progress</h3>
+<div class="bg-emerald-900 text-on-primary-container p-6 rounded-2xl relative overflow-hidden shadow-xl">
+<div class="relative z-10">
+<div class="flex items-center justify-between mb-4">
+<div>
+<p class="text-primary-fixed text-xs uppercase tracking-widest font-bold mb-1">Total Active Units</p>
+<h4 class="text-4xl font-headline font-extrabold tracking-tight">1,248</h4>
+</div>
+<div class="bg-primary-container/30 p-2 rounded-lg">
+<span class="material-symbols-outlined text-primary-fixed">trending_up</span>
+</div>
+</div>
+<!-- Asymmetric Minimal Bar Chart -->
+<div class="flex items-end gap-1.5 h-16 mb-4">
+<div class="flex-1 bg-primary-fixed/20 rounded-t-sm h-[40%]"></div>
+<div class="flex-1 bg-primary-fixed/30 rounded-t-sm h-[60%]"></div>
+<div class="flex-1 bg-primary-fixed/50 rounded-t-sm h-[50%]"></div>
+<div class="flex-1 bg-primary-fixed/40 rounded-t-sm h-[80%]"></div>
+<div class="flex-1 bg-primary-fixed rounded-t-sm h-[95%]"></div>
+<div class="flex-1 bg-primary-fixed/70 rounded-t-sm h-[65%]"></div>
+<div class="flex-1 bg-primary-fixed/40 rounded-t-sm h-[45%]"></div>
+<div class="flex-1 bg-primary-fixed/60 rounded-t-sm h-[75%]"></div>
+</div>
+<p class="text-primary-fixed/80 text-xs leading-relaxed">
+                        Allocation efficiency is up <span class="font-bold text-primary-fixed">12.4%</span> this month. Predictive grazing suggests a 5% optimization window in Sector 4.
+                    </p>
+</div>
+<!-- Background decoration -->
+<div class="absolute -right-10 -bottom-10 w-40 h-40 bg-primary-container/10 rounded-full blur-3xl"></div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-[0_-4px_20px_rgba(0,0,0,0.04)] rounded-t-3xl">
+<div class="flex justify-around items-center px-4 pt-3 pb-8">
+<a class="flex flex-col items-center justify-center text-emerald-600/70 dark:text-slate-500 hover:text-emerald-800 dark:hover:text-emerald-300 transition-all ease-out tap-highlight-none" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-['Inter'] text-[11px] font-medium tracking-wide uppercase mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-emerald-100 dark:bg-emerald-900/40 text-emerald-900 dark:text-emerald-100 rounded-full px-5 py-1.5 transition-all ease-out tap-highlight-none" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+<span class="font-['Inter'] text-[11px] font-medium tracking-wide uppercase mt-1">Batches</span>
+</a>
+<a class="flex flex-col items-center justify-center text-emerald-600/70 dark:text-slate-500 hover:text-emerald-800 dark:hover:text-emerald-300 transition-all ease-out tap-highlight-none" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-['Inter'] text-[11px] font-medium tracking-wide uppercase mt-1">Reports</span>
+</a>
+<a class="flex flex-col items-center justify-center text-emerald-600/70 dark:text-slate-500 hover:text-emerald-800 dark:hover:text-emerald-300 transition-all ease-out tap-highlight-none" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-['Inter'] text-[11px] font-medium tracking-wide uppercase mt-1">Profile</span>
+</a>
+</div>
+</nav>
+</body></html>

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Today's Summary - Verdant Archive</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "error-container": "#ffdad6",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#0b1c30",
+                        "surface-container-highest": "#d3e4fe",
+                        "tertiary-container": "#9b6200",
+                        "on-error": "#ffffff",
+                        "surface-variant": "#d3e4fe",
+                        "secondary-fixed": "#d6e3ff",
+                        "on-tertiary-container": "#fff0e3",
+                        "surface-bright": "#f8f9ff",
+                        "outline": "#707a6e",
+                        "outline-variant": "#bfc9bb",
+                        "on-error-container": "#93000a",
+                        "surface": "#f8f9ff",
+                        "background": "#f8f9ff",
+                        "on-secondary-fixed": "#001b3d",
+                        "surface-container-low": "#eff4ff",
+                        "on-primary-fixed": "#002108",
+                        "error": "#ba1a1a",
+                        "surface-dim": "#cbdbf5",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#e5eeff",
+                        "on-tertiary-fixed": "#2a1700",
+                        "inverse-primary": "#88d98f",
+                        "primary": "#0c6328",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "secondary-container": "#64a1ff",
+                        "primary-fixed": "#a3f6a9",
+                        "on-secondary-fixed-variant": "#00468c",
+                        "on-primary-fixed-variant": "#00531e",
+                        "on-primary": "#ffffff",
+                        "on-secondary-container": "#003670",
+                        "surface-tint": "#1a6c30",
+                        "tertiary": "#7a4c00",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-surface-variant": "#40493f",
+                        "tertiary-fixed": "#ffddb8",
+                        "surface-container-high": "#dce9ff",
+                        "secondary-fixed-dim": "#a9c7ff",
+                        "inverse-surface": "#213145",
+                        "secondary": "#005db7",
+                        "primary-fixed-dim": "#88d98f",
+                        "primary-container": "#2e7d3e",
+                        "on-primary-container": "#ccffcb",
+                        "on-surface": "#0b1c30"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-headline { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .tabular-nums { font-variant-numeric: tabular-nums; }
+    </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-40 bg-white/80 backdrop-blur-md shadow-sm">
+<div class="flex justify-between items-center h-16 px-6 w-full">
+<div class="flex items-center gap-4">
+<span class="text-xl font-bold text-green-800 font-headline">Saylani Livestock</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-slate-500 hover:bg-slate-50 transition-colors rounded-full active:scale-95 duration-150">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<div class="h-8 w-[1px] bg-slate-100 mx-2"></div>
+<div class="flex items-center gap-3">
+<div class="text-right hidden sm:block">
+<p class="text-xs font-bold text-green-700">Admin</p>
+<p class="text-[10px] text-slate-500">Staff Portal</p>
+</div>
+<img alt="User profile" class="w-8 h-8 rounded-full border border-outline-variant/20" data-alt="Close-up professional portrait of a male staff member in a clean uniform with a friendly expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtCIQ7KIjyIvQvMqhF9Ri1oUJ2KoEJwj_0MPQwiQVdHzMdDvr80mwsM1G3gtEcN_FtiCWQT6pvt0GuaqGUSKBN303Wu3wTUEtgN6RXwpKSZi_XNXeqE2AHo1V9TaHOYfSNnnU0Up4C4AH4v0zsOudzBzOrAVED8jjxxZ72p8sG_xrIx6a6x06cehq_n9f0-dfv6QFUnQ8f0wL30gRw-mcK6dnb_PD3KvvNZI0qfFGQmm8KOC4e00Sr1Qtt0wviVa-aG6o8aWND6r4"/>
+</div>
+</div>
+</div>
+</header>
+<!-- SideNavBar -->
+<aside class="hidden md:flex flex-col fixed left-0 top-0 h-full z-50 py-6 w-64 bg-slate-50">
+<div class="px-8 mb-8">
+<h1 class="text-lg font-black text-green-800 font-headline">Verdant Archive</h1>
+<p class="text-[10px] uppercase tracking-widest text-slate-500 font-bold">Enterprise Tracking</p>
+</div>
+<nav class="flex-1 space-y-1">
+<!-- Operations is active for Today's Summary -->
+<a class="text-slate-600 px-8 py-3 flex items-center gap-3 hover:text-green-700 transition-all active:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-medium">Overview</span>
+</a>
+<a class="text-slate-600 px-8 py-3 flex items-center gap-3 hover:text-green-700 transition-all active:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="pets">pets</span>
+<span class="font-medium">Livestock</span>
+</a>
+<a class="text-slate-600 px-8 py-3 flex items-center gap-3 hover:text-green-700 transition-all active:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-medium">Reports</span>
+</a>
+<a class="text-green-800 font-bold bg-white rounded-l-full ml-4 pl-4 py-3 flex items-center gap-3 active:translate-x-1 duration-200 shadow-sm" href="#">
+<span class="material-symbols-outlined text-green-700" data-icon="precision_manufacturing">precision_manufacturing</span>
+<span class="font-medium">Operations</span>
+</a>
+<a class="text-slate-600 px-8 py-3 flex items-center gap-3 hover:text-green-700 transition-all active:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-medium">Inventory</span>
+</a>
+<a class="text-slate-600 px-8 py-3 flex items-center gap-3 hover:text-green-700 transition-all active:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-medium">Settings</span>
+</a>
+</nav>
+<div class="px-6 mt-auto space-y-1">
+<a class="text-slate-600 px-4 py-2 flex items-center gap-3 hover:text-green-700 transition-all text-sm" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="contact_support">contact_support</span>
+                Support
+            </a>
+<a class="text-slate-600 px-4 py-2 flex items-center gap-3 hover:text-error transition-all text-sm" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="logout">logout</span>
+                Logout
+            </a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="md:pl-64 pt-16 min-h-screen">
+<div class="p-6 md:p-10 max-w-7xl mx-auto">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
+<div>
+<h2 class="text-4xl font-extrabold text-on-surface font-headline tracking-tight mb-2">Aaj Ka Summary</h2>
+<p class="text-on-surface-variant font-medium">Detailed tracking of today's slaughterhouse operations.</p>
+</div>
+<div class="inline-flex items-center gap-2 px-4 py-2 bg-primary-fixed text-on-primary-fixed rounded-xl font-bold text-sm shadow-sm">
+<span class="material-symbols-outlined text-lg" data-icon="calendar_today">calendar_today</span>
+                    October 24, 2023
+                </div>
+</div>
+<!-- Bento Stats Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+<!-- Stat Box 1 -->
+<div class="relative overflow-hidden bg-surface-container-lowest p-8 rounded-xl transition-all hover:translate-y-[-4px] duration-300">
+<div class="absolute -right-4 -bottom-4 opacity-10 text-primary">
+<span class="material-symbols-outlined text-9xl" data-icon="pets">pets</span>
+</div>
+<p class="text-sm font-bold text-on-surface-variant uppercase tracking-widest mb-4">Aaj Zabah Hue</p>
+<div class="flex items-baseline gap-2">
+<span class="text-5xl font-black text-primary font-headline tabular-nums">42</span>
+<span class="text-on-surface-variant font-medium text-sm">Heads</span>
+</div>
+<div class="mt-4 flex items-center gap-2 text-primary-container text-xs font-bold">
+<span class="material-symbols-outlined text-sm" data-icon="trending_up">trending_up</span>
+                        12% higher than yesterday
+                    </div>
+</div>
+<!-- Stat Box 2 -->
+<div class="relative overflow-hidden bg-surface-container-lowest p-8 rounded-xl transition-all hover:translate-y-[-4px] duration-300">
+<div class="absolute -right-4 -bottom-4 opacity-10 text-secondary">
+<span class="material-symbols-outlined text-9xl" data-icon="monitor_weight">monitor_weight</span>
+</div>
+<p class="text-sm font-bold text-on-surface-variant uppercase tracking-widest mb-4">Gosht Recorded</p>
+<div class="flex items-baseline gap-2">
+<span class="text-5xl font-black text-secondary font-headline tabular-nums">1,284</span>
+<span class="text-on-surface-variant font-medium text-sm">KG</span>
+</div>
+<div class="mt-4 flex items-center gap-2 text-secondary-container text-xs font-bold">
+<span class="material-symbols-outlined text-sm" data-icon="check_circle">check_circle</span>
+                        All weight logs verified
+                    </div>
+</div>
+<!-- Stat Box 3 -->
+<div class="relative overflow-hidden bg-surface-container-lowest p-8 rounded-xl transition-all hover:translate-y-[-4px] duration-300">
+<div class="absolute -right-4 -bottom-4 opacity-10 text-tertiary">
+<span class="material-symbols-outlined text-9xl" data-icon="inventory">inventory</span>
+</div>
+<p class="text-sm font-bold text-on-surface-variant uppercase tracking-widest mb-4">Khal + Paye</p>
+<div class="flex items-baseline gap-2">
+<span class="text-5xl font-black text-tertiary font-headline tabular-nums">84</span>
+<span class="text-on-surface-variant font-medium text-sm">Units</span>
+</div>
+<div class="mt-4 flex items-center gap-2 text-tertiary-container text-xs font-bold">
+<span class="material-symbols-outlined text-sm" data-icon="local_shipping">local_shipping</span>
+                        Ready for dispatch
+                    </div>
+</div>
+</div>
+<!-- Entries Table -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden mb-12">
+<div class="px-8 py-6 flex items-center justify-between">
+<h3 class="text-xl font-bold font-headline text-on-surface">Today's Entries</h3>
+<div class="flex items-center gap-2 text-on-surface-variant text-sm font-medium bg-surface-container-low px-3 py-1 rounded-full">
+<span class="material-symbols-outlined text-sm" data-icon="person">person</span>
+                        Logged by: Sameer Ahmed
+                    </div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead class="bg-surface-container-low text-on-surface-variant uppercase text-[11px] font-black tracking-widest">
+<tr>
+<th class="px-8 py-4">ID</th>
+<th class="px-8 py-4">Animal Type</th>
+<th class="px-8 py-4">Weight (KG)</th>
+<th class="px-8 py-4">Khal Count</th>
+<th class="px-8 py-4">Status</th>
+<th class="px-8 py-4 text-right">Timestamp</th>
+</tr>
+</thead>
+<tbody class="divide-y-0">
+<!-- Entry 1 -->
+<tr class="hover:bg-surface-container-high transition-colors group">
+<td class="px-8 py-6 font-bold text-primary tabular-nums">#LV-9821</td>
+<td class="px-8 py-6">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-fixed text-sm" data-icon="pets">pets</span>
+</div>
+<span class="font-semibold text-on-surface">Cow (Brahman)</span>
+</div>
+</td>
+<td class="px-8 py-6 font-medium tabular-nums">412.5</td>
+<td class="px-8 py-6 font-medium tabular-nums">2</td>
+<td class="px-8 py-6">
+<span class="px-3 py-1 bg-primary-fixed text-on-primary-fixed-variant text-[10px] font-bold rounded-full uppercase tracking-tighter">Submitted</span>
+</td>
+<td class="px-8 py-6 text-right text-on-surface-variant tabular-nums text-sm">09:42 AM</td>
+</tr>
+<!-- Entry 2 -->
+<tr class="hover:bg-surface-container-high transition-colors group">
+<td class="px-8 py-6 font-bold text-primary tabular-nums">#LV-9822</td>
+<td class="px-8 py-6">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-secondary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-fixed text-sm" data-icon="pets">pets</span>
+</div>
+<span class="font-semibold text-on-surface">Goat (Beetal)</span>
+</div>
+</td>
+<td class="px-8 py-6 font-medium tabular-nums">45.0</td>
+<td class="px-8 py-6 font-medium tabular-nums">2</td>
+<td class="px-8 py-6">
+<span class="px-3 py-1 bg-primary-fixed text-on-primary-fixed-variant text-[10px] font-bold rounded-full uppercase tracking-tighter">Submitted</span>
+</td>
+<td class="px-8 py-6 text-right text-on-surface-variant tabular-nums text-sm">10:15 AM</td>
+</tr>
+<!-- Entry 3 -->
+<tr class="hover:bg-surface-container-high transition-colors group">
+<td class="px-8 py-6 font-bold text-primary tabular-nums">#LV-9823</td>
+<td class="px-8 py-6">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-fixed text-sm" data-icon="pets">pets</span>
+</div>
+<span class="font-semibold text-on-surface">Cow (Sahiwal)</span>
+</div>
+</td>
+<td class="px-8 py-6 font-medium tabular-nums">389.2</td>
+<td class="px-8 py-6 font-medium tabular-nums">2</td>
+<td class="px-8 py-6">
+<span class="px-3 py-1 bg-primary-fixed text-on-primary-fixed-variant text-[10px] font-bold rounded-full uppercase tracking-tighter">Submitted</span>
+</td>
+<td class="px-8 py-6 text-right text-on-surface-variant tabular-nums text-sm">11:04 AM</td>
+</tr>
+<!-- Entry 4 -->
+<tr class="hover:bg-surface-container-high transition-colors group">
+<td class="px-8 py-6 font-bold text-primary tabular-nums">#LV-9824</td>
+<td class="px-8 py-6">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-fixed text-sm" data-icon="pets">pets</span>
+</div>
+<span class="font-semibold text-on-surface">Cow (Cross)</span>
+</div>
+</td>
+<td class="px-8 py-6 font-medium tabular-nums">425.8</td>
+<td class="px-8 py-6 font-medium tabular-nums">2</td>
+<td class="px-8 py-6">
+<span class="px-3 py-1 bg-primary-fixed text-on-primary-fixed-variant text-[10px] font-bold rounded-full uppercase tracking-tighter">Submitted</span>
+</td>
+<td class="px-8 py-6 text-right text-on-surface-variant tabular-nums text-sm">11:58 AM</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="px-8 py-6 bg-surface-container-low/50 flex justify-center">
+<button class="text-primary font-bold text-sm flex items-center gap-2 hover:underline transition-all">
+                        Load More Records
+                        <span class="material-symbols-outlined text-sm" data-icon="keyboard_arrow_down">keyboard_arrow_down</span>
+</button>
+</div>
+</div>
+<!-- Footer Meta -->
+<div class="flex flex-col md:flex-row gap-6 items-center justify-between border-t border-outline-variant/10 pt-8 opacity-60">
+<p class="text-xs font-medium text-on-surface-variant">© 2023 Saylani Livestock Management. All data entries are timestamped and encrypted.</p>
+<div class="flex gap-4">
+<span class="flex items-center gap-1 text-xs font-bold text-primary">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+                        Cloud Sync Active
+                    </span>
+<span class="flex items-center gap-1 text-xs font-bold text-on-surface-variant">
+                        Terminal ID: SL-782-KHI
+                    </span>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 bg-white/80 backdrop-blur-md px-6 py-3 flex justify-around items-center z-40 border-t border-slate-100">
+<button class="flex flex-col items-center gap-1 text-slate-500">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="text-[10px] font-bold">Home</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-green-700">
+<span class="material-symbols-outlined" data-icon="precision_manufacturing">precision_manufacturing</span>
+<span class="text-[10px] font-bold">Operations</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-500">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="text-[10px] font-bold">Reports</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-500">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="text-[10px] font-bold">Settings</span>
+</button>
+</nav>
+</body></html>

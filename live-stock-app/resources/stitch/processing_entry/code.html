@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Processing Entry | Saylani Welfare</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-container": "#ccffcb",
+                    "inverse-primary": "#88d98f",
+                    "surface-container-low": "#eff4ff",
+                    "inverse-on-surface": "#eaf1ff",
+                    "surface-tint": "#1a6c30",
+                    "error": "#ba1a1a",
+                    "outline": "#707a6e",
+                    "on-secondary-fixed": "#001b3d",
+                    "tertiary-fixed-dim": "#ffb95f",
+                    "on-secondary": "#ffffff",
+                    "surface-variant": "#d3e4fe",
+                    "error-container": "#ffdad6",
+                    "on-error": "#ffffff",
+                    "surface-container-highest": "#d3e4fe",
+                    "secondary-container": "#64a1ff",
+                    "on-secondary-container": "#003670",
+                    "primary": "#0c6328",
+                    "primary-fixed": "#a3f6a9",
+                    "outline-variant": "#bfc9bb",
+                    "surface": "#f8f9ff",
+                    "on-tertiary-container": "#fff0e3",
+                    "on-tertiary-fixed-variant": "#653e00",
+                    "on-primary-fixed": "#002108",
+                    "on-tertiary": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "surface-container": "#e5eeff",
+                    "background": "#f8f9ff",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-fixed-dim": "#a9c7ff",
+                    "on-surface": "#0b1c30",
+                    "primary-container": "#2e7d3e",
+                    "tertiary-container": "#9b6200",
+                    "primary-fixed-dim": "#88d98f",
+                    "inverse-surface": "#213145",
+                    "secondary": "#005db7",
+                    "surface-container-high": "#dce9ff",
+                    "tertiary": "#7a4c00",
+                    "surface-dim": "#cbdbf5",
+                    "on-secondary-fixed-variant": "#00468c",
+                    "secondary-fixed": "#d6e3ff",
+                    "on-tertiary-fixed": "#2a1700",
+                    "on-surface-variant": "#40493f",
+                    "on-primary-fixed-variant": "#00531e",
+                    "surface-bright": "#f8f9ff",
+                    "on-error-container": "#93000a",
+                    "tertiary-fixed": "#ffddb8",
+                    "on-background": "#0b1c30"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-headline { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .tabular-nums { font-variant-numeric: tabular-nums; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full h-[60px] z-50 bg-white/80 backdrop-blur-md border-b border-slate-100 shadow-sm flex justify-between items-center px-6 font-['Manrope']">
+<div class="flex items-center gap-4">
+<div class="flex flex-col tracking-tight text-xl font-bold text-green-900">
+<span>Saylani Welfare</span>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-4 text-slate-500">
+<span class="material-symbols-outlined cursor-pointer hover:bg-slate-50 p-2 rounded-full transition-colors">notifications</span>
+<span class="material-symbols-outlined cursor-pointer hover:bg-slate-50 p-2 rounded-full transition-colors">help</span>
+</div>
+<div class="h-8 w-8 rounded-full bg-surface-container-high overflow-hidden border border-outline-variant/20">
+<img alt="User Avatar" data-alt="professional portrait of a warehouse manager in a clean environment, soft natural lighting, high quality photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhWXxiC3dYfDiOdNOPtEqiVhXRckw34oz4nHQ3b9-eNi7xb9-XLncaSO8M_RS5NqufnIPUXktOCXJwNnWP1QouZk8IuSb2bsvscH1LUzXTy_3GW7Om8BlChsuffUfW4drBpQO0pKGepnZRCi2hyi75fULQy2yRRqIidKwiKzuiVXLdiqkKP8qAWwVU3ZbVjC9XIhSoe6SxVRDOAHiOquJMk_cGzlPYW9rUbxyxF8h5TJ6Ghia9sQgFB9eKSN1lGvIcq_0ep4J9YsQ"/>
+</div>
+<button class="text-green-800 font-semibold cursor-pointer active:scale-95 duration-200">Logout</button>
+</div>
+</nav>
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full w-[240px] pt-[60px] z-40 bg-white border-r border-slate-100 flex flex-col p-4 gap-2 font-['Manrope'] text-sm font-medium tabular-nums">
+<div class="mb-6 px-2">
+<p class="text-[10px] uppercase tracking-widest text-slate-400 font-bold">Admin Console</p>
+<p class="text-xs text-green-700">Livestock Management</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-600 hover:text-green-600 hover:bg-slate-50 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-green-700 bg-green-50/50 rounded-lg font-semibold" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span>All Batches</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-600 hover:text-green-600 hover:bg-slate-50 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">add_circle</span>
+<span>Create Batch</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-600 hover:text-green-600 hover:bg-slate-50 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">lan</span>
+<span>Branch Allocation</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-600 hover:text-green-600 hover:bg-slate-50 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">list_alt</span>
+<span>Allocations List</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-600 hover:text-green-600 hover:bg-slate-50 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span>Reports &amp; Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-600 hover:text-green-600 hover:bg-slate-50 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">group</span>
+<span>User Management</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-600 hover:text-green-600 hover:bg-slate-50 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span>Settings</span>
+</a>
+</nav>
+<div class="pt-4 border-t border-slate-100 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-500 hover:text-green-600 transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">help</span>
+<span class="text-xs">Help Center</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-500 hover:text-green-600 transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">headset_mic</span>
+<span class="text-xs">Contact Support</span>
+</a>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="ml-[240px] pt-[60px] min-h-screen p-8">
+<div class="max-w-6xl mx-auto space-y-8">
+<!-- Header Section -->
+<header class="flex justify-between items-end">
+<div>
+<h1 class="text-4xl font-extrabold font-headline tracking-tight text-on-surface">Processing Entry</h1>
+<p class="text-on-surface-variant mt-2">Log meat processing details for active slaughter records.</p>
+</div>
+<div class="text-right">
+<span class="text-xs font-bold uppercase tracking-widest text-outline">Current Date</span>
+<p class="font-headline font-bold text-lg tabular-nums">Oct 24, 2023</p>
+</div>
+</header>
+<!-- Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Left Column: Entry Form -->
+<div class="lg:col-span-8 space-y-6">
+<section class="bg-surface-container-lowest p-8 rounded-xl shadow-sm">
+<div class="mb-8">
+<label class="block text-sm font-bold text-on-surface-variant mb-3">Select Slaughter Record</label>
+<div class="relative">
+<select class="w-full bg-surface-container-low border-none rounded-t-xl py-4 px-4 focus:ring-0 appearance-none text-on-surface font-medium">
+<option>Slaughter #SL-045 | 50 bakray</option>
+<option>Slaughter #SL-046 | 30 bakray</option>
+<option>Slaughter #SL-047 | 120 cows</option>
+</select>
+<div class="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-outline">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+<div class="h-[2px] w-full bg-primary"></div>
+</div>
+</div>
+<!-- Active Record Info Card -->
+<div class="bg-surface-container-low/50 p-6 rounded-xl flex items-center justify-between mb-8 border-l-4 border-primary">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed-variant">
+<span class="material-symbols-outlined">inventory</span>
+</div>
+<div>
+<h3 class="font-headline font-bold text-lg">Slaughter #SL-045</h3>
+<p class="text-on-surface-variant text-sm">Batch ID: BT-9920 | Location: Karachi Center</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-2xl font-black font-headline tabular-nums text-primary">50</p>
+<p class="text-xs font-bold uppercase tracking-tighter text-outline">Animals (Goats)</p>
+</div>
+</div>
+<!-- Processing Form -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-widest text-outline">Meat Weight (kg)</label>
+<div class="relative">
+<input class="w-full bg-surface-container-low border-none rounded-t-xl py-4 px-4 focus:ring-0 text-on-surface font-headline font-bold tabular-nums" placeholder="900" type="number"/>
+<div class="h-[2px] w-full bg-outline-variant"></div>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-widest text-outline">Number of Khal (pcs)</label>
+<div class="relative">
+<input class="w-full bg-surface-container-low border-none rounded-t-xl py-4 px-4 focus:ring-0 text-on-surface font-headline font-bold tabular-nums" placeholder="50" type="number"/>
+<div class="h-[2px] w-full bg-outline-variant"></div>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-widest text-outline">Number of Paye (pcs)</label>
+<div class="relative">
+<input class="w-full bg-surface-container-low border-none rounded-t-xl py-4 px-4 focus:ring-0 text-on-surface font-headline font-bold tabular-nums" placeholder="200" type="number"/>
+<div class="h-[2px] w-full bg-outline-variant"></div>
+</div>
+</div>
+</div>
+<!-- Auto-Calc Summary (Editorial Box) -->
+<div class="bg-primary-fixed/30 rounded-xl p-6 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-4">
+<div class="bg-white/50 p-2 rounded-lg">
+<span class="material-symbols-outlined text-primary">calculate</span>
+</div>
+<p class="font-headline font-bold text-on-primary-fixed-variant">Real-time Per Animal Averages</p>
+</div>
+<div class="flex gap-8">
+<div class="text-center">
+<p class="text-xl font-black font-headline tabular-nums text-primary">18kg</p>
+<p class="text-[10px] font-bold uppercase text-on-primary-fixed-variant/70">Meat Avg</p>
+</div>
+<div class="text-center">
+<p class="text-xl font-black font-headline tabular-nums text-primary">1</p>
+<p class="text-[10px] font-bold uppercase text-on-primary-fixed-variant/70">Khal Avg</p>
+</div>
+<div class="text-center">
+<p class="text-xl font-black font-headline tabular-nums text-primary">4</p>
+<p class="text-[10px] font-bold uppercase text-on-primary-fixed-variant/70">Paye Avg</p>
+</div>
+</div>
+</div>
+<div class="mt-10 flex justify-end">
+<button class="bg-gradient-to-br from-primary to-primary-container text-white px-10 py-4 rounded-xl font-headline font-bold shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-95 transition-all">
+                                Save Processing Record
+                            </button>
+</div>
+</section>
+</div>
+<!-- Right Column: Recent Activity/Stats -->
+<div class="lg:col-span-4 space-y-6">
+<div class="bg-surface-container-low p-6 rounded-xl">
+<h3 class="font-headline font-extrabold text-on-surface mb-6">Processing Efficiency</h3>
+<div class="space-y-4">
+<div class="bg-surface-container-lowest p-4 rounded-lg flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed-variant">
+<span class="material-symbols-outlined">trending_up</span>
+</div>
+<div>
+<p class="text-2xl font-black font-headline tabular-nums">842kg</p>
+<p class="text-[10px] font-bold uppercase text-outline">Today's Total Meat</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-lg flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed-variant">
+<span class="material-symbols-outlined">analytics</span>
+</div>
+<div>
+<p class="text-2xl font-black font-headline tabular-nums">98.2%</p>
+<p class="text-[10px] font-bold uppercase text-outline">Yield Target Met</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative rounded-xl overflow-hidden h-[300px] group">
+<img alt="Livestock Facility" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="clean and organized modern industrial meat processing facility with stainless steel surfaces and professional staff" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdEFN4Hk7axariUnwZYgGx2uRU0GtZdcFpLDU33KOAo2yuecph4YuHw-g-Sg2wi2leVnRo02IZk5bMGj5AmqqyHulvolWung0WHxT-6a-zU0FDdEx6WbeC5DfqzCzvIDIdhLrPxOAaLmvNjkTreULSBouKAt-7cRpuzwi2rvYp0B7QIA_wHVqoh7n1GswL9Ze-DQZNVcISwdwwddcWsy6dp2GJ002U7eHqtNcoR5NKkhL_MbSfnuOKDpZdJODPGn37mn1tHUfibzc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex flex-col justify-end p-6">
+<p class="text-white/80 text-xs font-bold uppercase tracking-widest">Facility Insight</p>
+<h4 class="text-white font-headline font-bold text-lg">Central Karachi Hub</h4>
+<p class="text-white/70 text-sm">Processing capacity: 500 units/day</p>
+</div>
+</div>
+</div>
+<!-- History Table (Full Width Below) -->
+<div class="lg:col-span-12">
+<section class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm">
+<div class="p-8 border-b border-surface-container-low flex justify-between items-center">
+<h2 class="font-headline font-extrabold text-xl">Recent Processing History</h2>
+<button class="text-primary text-sm font-bold flex items-center gap-2">
+                                View Full Logs <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low/30">
+<th class="px-8 py-5 text-xs font-bold uppercase tracking-widest text-outline">Record ID</th>
+<th class="px-8 py-5 text-xs font-bold uppercase tracking-widest text-outline">Animals</th>
+<th class="px-8 py-5 text-xs font-bold uppercase tracking-widest text-outline">Total Meat</th>
+<th class="px-8 py-5 text-xs font-bold uppercase tracking-widest text-outline">By-Products</th>
+<th class="px-8 py-5 text-xs font-bold uppercase tracking-widest text-outline">Processed By</th>
+<th class="px-8 py-5 text-xs font-bold uppercase tracking-widest text-outline">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-low">
+<tr class="hover:bg-surface-container-low/20 transition-colors">
+<td class="px-8 py-6">
+<p class="font-headline font-bold">#SL-044</p>
+<p class="text-[10px] text-outline">24 Oct 2023, 09:12 AM</p>
+</td>
+<td class="px-8 py-6 font-headline font-medium tabular-nums text-on-surface">42 Units</td>
+<td class="px-8 py-6">
+<span class="bg-primary-fixed text-on-primary-fixed-variant px-3 py-1 rounded-full text-xs font-bold tabular-nums">756 kg</span>
+</td>
+<td class="px-8 py-6 text-sm text-on-surface-variant">42 Khal / 168 Paye</td>
+<td class="px-8 py-6">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-slate-200"></div>
+<span class="text-sm">Ahmed Raza</span>
+</div>
+</td>
+<td class="px-8 py-6">
+<span class="bg-primary-fixed text-on-primary-fixed-variant text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">Completed</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/20 transition-colors">
+<td class="px-8 py-6">
+<p class="font-headline font-bold">#SL-043</p>
+<p class="text-[10px] text-outline">23 Oct 2023, 04:45 PM</p>
+</td>
+<td class="px-8 py-6 font-headline font-medium tabular-nums text-on-surface">15 Units</td>
+<td class="px-8 py-6">
+<span class="bg-primary-fixed text-on-primary-fixed-variant px-3 py-1 rounded-full text-xs font-bold tabular-nums">285 kg</span>
+</td>
+<td class="px-8 py-6 text-sm text-on-surface-variant">15 Khal / 60 Paye</td>
+<td class="px-8 py-6">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-slate-200"></div>
+<span class="text-sm">Sara Khan</span>
+</div>
+</td>
+<td class="px-8 py-6">
+<span class="bg-primary-fixed text-on-primary-fixed-variant text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">Completed</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</div>
+</div>
+</div>
+</main>
+</body></html>

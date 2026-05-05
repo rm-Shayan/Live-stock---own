@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-container": "#536a59",
+                    "primary-container": "#007d3a",
+                    "on-surface": "#181d1b",
+                    "tertiary-fixed-dim": "#bdcabe",
+                    "secondary": "#4d6453",
+                    "surface-dim": "#d7dbd8",
+                    "surface-container": "#ebefec",
+                    "secondary-container": "#d0e9d4",
+                    "on-tertiary-container": "#e5f2e6",
+                    "on-tertiary-fixed": "#131e17",
+                    "surface-container-low": "#f1f5f2",
+                    "surface-bright": "#f6faf7",
+                    "surface-tint": "#006d32",
+                    "on-primary-container": "#b9ffc2",
+                    "on-secondary-fixed-variant": "#364c3d",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-fixed": "#d9e6da",
+                    "on-primary-fixed": "#00210a",
+                    "on-tertiary": "#ffffff",
+                    "secondary-fixed": "#d0e9d4",
+                    "on-secondary-fixed": "#0b2013",
+                    "inverse-on-surface": "#eef2ef",
+                    "on-primary-fixed-variant": "#005224",
+                    "surface-container-high": "#e5e9e6",
+                    "inverse-primary": "#76dc8d",
+                    "outline": "#6f7a6e",
+                    "on-background": "#181d1b",
+                    "on-surface-variant": "#3f4a3f",
+                    "surface-variant": "#dfe3e1",
+                    "tertiary-container": "#636f66",
+                    "background": "#f6faf7",
+                    "primary-fixed-dim": "#76dc8d",
+                    "on-tertiary-fixed-variant": "#3e4a41",
+                    "surface": "#f6faf7",
+                    "primary": "#00612c",
+                    "on-error": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "surface-container-highest": "#dfe3e1",
+                    "secondary-fixed-dim": "#b4cdb9",
+                    "tertiary": "#4b574e",
+                    "on-error-container": "#93000a",
+                    "outline-variant": "#becabc",
+                    "inverse-surface": "#2d3130",
+                    "error": "#ba1a1a",
+                    "error-container": "#ffdad6",
+                    "primary-fixed": "#92f9a7"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center w-full px-6 py-4 sticky top-0 z-50 bg-[#f6faf7]/80 dark:bg-emerald-950/80 backdrop-blur-xl">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center overflow-hidden">
+<img alt="Profile" class="w-full h-full object-cover" data-alt="Professional portrait of a middle-aged veterinarian in a soft-lit indoor office setting, warm natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpPsfzazOnh7acc3TlTqtb_nZN_v7cdBqPkx8E1vz5b_7vOlZPrzRqeYf8vCrGCIdPkXCpSVrNw8dpvBr2nvNlV9Pw0KsJyZecZbjUy9BDSkFQOBtseVZIUKtxZtMho5kOr_G0dlPTlT46MC0Psjv237QlsPtT0Ykodff_P3saD3DmqKWdA4MVswRjX0iRUXxb7MFtGKgZ3ikymBMw4Eq2D3zWzsUbAXQb_25HkZC8jcuMhvFnupT1BampxczJie0PRy5j5X8wYdQ"/>
+</div>
+<span class="text-lg font-extrabold text-[#00612c] dark:text-emerald-300 font-headline tracking-tight">Saylani Pastoral</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-[#00612c] dark:text-emerald-400 p-2 hover:bg-[#f1f5f2] transition-colors rounded-full">notifications</button>
+</div>
+</header>
+<main class="max-w-5xl mx-auto px-6 py-8">
+<!-- Search & Filter Bar -->
+<section class="mb-8">
+<div class="relative group">
+<div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline">search</span>
+</div>
+<input class="w-full bg-surface-container-lowest border-none rounded-xl py-4 pl-12 pr-4 shadow-[0_4px_24px_rgba(0,125,58,0.04)] focus:ring-2 focus:ring-primary/20 text-on-surface placeholder-outline/60" placeholder="Search by Tag ID (e.g. SP-409)..." type="text"/>
+</div>
+</section>
+<!-- Stats Bento Grid -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
+<div class="bg-surface-container-low p-6 rounded-3xl flex flex-col justify-between h-40">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-primary bg-secondary-container p-2 rounded-full">pets</span>
+<span class="text-xs font-bold text-outline uppercase tracking-wider">Total Livestock</span>
+</div>
+<div class="text-4xl font-extrabold text-on-surface tracking-tight">1,284</div>
+</div>
+<div class="bg-error-container/30 p-6 rounded-3xl flex flex-col justify-between h-40">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-error bg-error-container p-2 rounded-full">emergency</span>
+<span class="text-xs font-bold text-error/80 uppercase tracking-wider">Critical Alerts</span>
+</div>
+<div class="text-4xl font-extrabold text-error tracking-tight">03</div>
+</div>
+<div class="bg-primary-container p-6 rounded-3xl flex flex-col justify-between h-40 text-on-primary">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined bg-white/20 p-2 rounded-full">vaccines</span>
+<span class="text-xs font-bold text-white/80 uppercase tracking-wider">Vax Due Today</span>
+</div>
+<div class="text-4xl font-extrabold tracking-tight">12</div>
+</div>
+</section>
+<div class="flex flex-col lg:flex-row gap-8">
+<!-- Animal Health List -->
+<div class="flex-1 space-y-4">
+<div class="flex items-center justify-between mb-2">
+<h2 class="text-xl font-bold font-headline text-on-surface">Health Registry</h2>
+<span class="text-sm font-medium text-outline">Showing 48 animals</span>
+</div>
+<!-- Animal Card: Critical -->
+<div class="bg-surface-container-lowest rounded-3xl p-5 flex items-center gap-5 shadow-[0_4px_32px_rgba(0,0,0,0.02)] border border-error-container/50">
+<div class="w-16 h-16 rounded-2xl overflow-hidden bg-surface-container">
+<img alt="Cow" class="w-full h-full object-cover" data-alt="Close up portrait of a brown swiss cow in a clean barn with soft morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8uaous0w_gzBQpmKYglvltAlQZLf0PidHFaqECDunzF831_qrKlV0WriWVHMm0CXqQ3g0PefLNF-rtv91BmLbU4KOzLofXn0q-HpqBhLhpABYxZ-Y6u7YPGmyjxWMFIX6DOLYXmWjpT6gIgJ6KocHTHB-UThn06lXhlp20URTaw-Eq3_Mo9qUemOQqXu2p5c9dN5CbuwmiWU9rdvXwsLn12o_UuLRkYMPWLy76JdgTPp4Rt0RAlc83FWFksh-mA5gCdnu1cH2xNE"/>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between mb-1">
+<h3 class="font-bold text-on-surface">Tag #SP-902</h3>
+<span class="px-3 py-1 bg-error-container text-on-error-container text-[10px] font-bold uppercase rounded-full">Critical</span>
+</div>
+<p class="text-sm text-outline mb-2">High Fever • Decreased Activity</p>
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-1 text-[11px] font-semibold text-error">
+<span class="material-symbols-outlined text-[14px]">thermostat</span> 104.2°F
+                            </div>
+<div class="flex items-center gap-1 text-[11px] font-semibold text-outline">
+<span class="material-symbols-outlined text-[14px]">timer</span> 2h ago
+                            </div>
+</div>
+</div>
+</div>
+<!-- Animal Card: Warning -->
+<div class="bg-surface-container-lowest rounded-3xl p-5 flex items-center gap-5 shadow-[0_4px_32px_rgba(0,0,0,0.02)]">
+<div class="w-16 h-16 rounded-2xl overflow-hidden bg-surface-container">
+<img alt="Sheep" class="w-full h-full object-cover" data-alt="Single white sheep looking at camera in a lush green meadow, soft bokeh background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfwumdeJcn2FR7_0HFp7wB9zVGcqi2CRGAyxMRVMBPd0DcUvKJTjl6u55YVoSzS8zwYpOqwxkfesdzHn5sG58x05aXIW3kt52k2il6rDM_U4mbDzUjn54w5LlnIZk_NuXpNDDu-HNTt_ZJKX05RB7ywTyftO4vBNOv3U7SXAKFQvU-45HVrsAGJIVLyySzxvpITlM3Y1gQ3D2cAKAWzyErdEm2DT3B4tVWtUtzK8abl2xmflju78NTaUN2dN5IOAbfVsQkV5AhxKc"/>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between mb-1">
+<h3 class="font-bold text-on-surface">Tag #SP-411</h3>
+<span class="px-3 py-1 bg-surface-variant text-on-surface-variant text-[10px] font-bold uppercase rounded-full">Warning</span>
+</div>
+<p class="text-sm text-outline mb-2">Slight Weight Loss • Monitoring</p>
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-1 text-[11px] font-semibold text-on-surface">
+<span class="material-symbols-outlined text-[14px]">monitor_weight</span> -2.4kg
+                            </div>
+<div class="flex items-center gap-1 text-[11px] font-semibold text-outline">
+<span class="material-symbols-outlined text-[14px]">timer</span> 5h ago
+                            </div>
+</div>
+</div>
+</div>
+<!-- Animal Card: Normal -->
+<div class="bg-surface-container-lowest rounded-3xl p-5 flex items-center gap-5 shadow-[0_4px_32px_rgba(0,0,0,0.02)]">
+<div class="w-16 h-16 rounded-2xl overflow-hidden bg-surface-container">
+<img alt="Goat" class="w-full h-full object-cover" data-alt="Curious white goat on a mountain farm during golden hour, sharp focus, natural environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXgYrINS-3e_0pM512u8ZdKDsk6ghoo9uGSsUbZdK0Yu3tXRsCouZF9NgMANQPvbWmWxoLKvFctwmBHh0rvK7him9Q_MZ9lJGnKY3E9Ojo904OX5dUQaYeiiPQoX6O48r-Ro7eYjj4pBtYsin-epaowAPfMBKQ4INuU4sQEE31TDPfoBAWeJcSYPtn8Xr3ovxE975tkBDmxFsydeD9LYjkUq8HVqSmosKcw0dKgQeemiV4m62qsza4cdVEvq7w2WxX6Oid-xMdjE4"/>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between mb-1">
+<h3 class="font-bold text-on-surface">Tag #SP-102</h3>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container text-[10px] font-bold uppercase rounded-full">Normal</span>
+</div>
+<p class="text-sm text-outline mb-2">Optimal Vitals • All Clear</p>
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-1 text-[11px] font-semibold text-primary">
+<span class="material-symbols-outlined text-[14px]">favorite</span> 100%
+                            </div>
+<div class="flex items-center gap-1 text-[11px] font-semibold text-outline">
+<span class="material-symbols-outlined text-[14px]">timer</span> 12h ago
+                            </div>
+</div>
+</div>
+</div>
+</div>
+<!-- Upcoming Vaccinations Panel -->
+<aside class="lg:w-80">
+<div class="bg-surface-container-low rounded-[32px] p-6 sticky top-24">
+<h2 class="text-lg font-bold font-headline text-on-surface mb-6">Upcoming Care</h2>
+<div class="space-y-6">
+<div class="relative pl-4 border-l-2 border-primary/20">
+<div class="absolute -left-[5px] top-0 w-2 h-2 rounded-full bg-primary"></div>
+<p class="text-[10px] font-bold text-primary uppercase tracking-widest mb-1">Tomorrow</p>
+<h4 class="font-bold text-on-surface text-sm">FMD Booster</h4>
+<p class="text-xs text-outline">24 Cattle • Paddock B</p>
+</div>
+<div class="relative pl-4 border-l-2 border-primary/10">
+<div class="absolute -left-[5px] top-0 w-2 h-2 rounded-full bg-outline-variant"></div>
+<p class="text-[10px] font-bold text-outline uppercase tracking-widest mb-1">Oct 12</p>
+<h4 class="font-bold text-on-surface text-sm">Brucellosis Screening</h4>
+<p class="text-xs text-outline">15 Goats • Nursery</p>
+</div>
+<div class="relative pl-4 border-l-2 border-primary/10">
+<div class="absolute -left-[5px] top-0 w-2 h-2 rounded-full bg-outline-variant"></div>
+<p class="text-[10px] font-bold text-outline uppercase tracking-widest mb-1">Oct 15</p>
+<h4 class="font-bold text-on-surface text-sm">Deworming Cycle</h4>
+<p class="text-xs text-outline">Global Herd • All Areas</p>
+</div>
+</div>
+<button class="w-full mt-8 py-3 bg-primary text-on-primary rounded-full font-bold text-sm hover:opacity-90 transition-opacity">
+                        View Schedule
+                    </button>
+</div>
+</aside>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-[#f6faf7]/90 dark:bg-emerald-950/90 backdrop-blur-xl rounded-t-[24px] shadow-[0_-4px_32px_rgba(0,125,58,0.04)]">
+<a class="flex flex-col items-center justify-center text-[#6f7a6e] dark:text-emerald-300/60 px-5 py-1.5 hover:opacity-80 active:scale-90" href="#">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="font-['Inter'] text-[11px] font-medium mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#6f7a6e] dark:text-emerald-300/60 px-5 py-1.5 hover:opacity-80 active:scale-90" href="#">
+<span class="material-symbols-outlined">pets</span>
+<span class="font-['Inter'] text-[11px] font-medium mt-1">Livestock</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#d0e9d4] dark:bg-emerald-800 text-[#00612c] dark:text-emerald-50 rounded-full px-5 py-1.5 transition-all active:scale-90" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">monitor_heart</span>
+<span class="font-['Inter'] text-[11px] font-bold mt-1">Health</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#6f7a6e] dark:text-emerald-300/60 px-5 py-1.5 hover:opacity-80 active:scale-90" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-['Inter'] text-[11px] font-medium mt-1">Profile</span>
+</a>
+</nav>
+</body></html>
